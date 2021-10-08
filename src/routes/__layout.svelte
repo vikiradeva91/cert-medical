@@ -1,9 +1,27 @@
 <script>
-	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
 </script>
 
-<Header />
+<header>
+	<section>
+		<a class="logo" href="/"><img src="img/cert_medical_logo.png" alt="" /></a>
+		<div class="mgE">
+			<hr />
+			<hr />
+			<hr />
+			<hr />
+		</div>
+		<div style="clear: both" />
+		<nav class="nav-mobile">
+			<a href="/about" class="fadein hover">ABOUT US</a>
+			<a href="/blog" class="fadein hover">BLOG</a>
+			<a href="/contacts" class="fadein hover">CONTACTS</a>
+			<div class="social">
+				<a class="fb" href="#" target="_blank" />
+			</div>
+		</nav>
+	</section>
+</header>
 
 <main>
 	<slot />
@@ -12,34 +30,3 @@
 <footer>
 	<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
 </footer>
-
-<style>
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 1024px;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 40px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 40px 0;
-		}
-	}
-</style>
