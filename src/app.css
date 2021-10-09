@@ -1,4 +1,6 @@
 @import '@fontsource/fira-mono';
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 
 @import './css/_content.css';
 @import './css/_header.css';

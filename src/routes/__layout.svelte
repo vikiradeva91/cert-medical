@@ -4,7 +4,7 @@
 
 <header>
 	<section>
-		<a class="logo" href="/"><img src="img/cert_medical_logo.png" alt="" /></a>
+		<a class="logo" href="/"><img src="/img/cert_medical_logo.png" alt="" /></a>
 		<div class="mgE">
 			<hr />
 			<hr />
@@ -17,7 +17,7 @@
 			<a href="/blog" class="fadein hover">BLOG</a>
 			<a href="/contacts" class="fadein hover">CONTACTS</a>
 			<div class="social">
-				<a class="fb" href="#" target="_blank" />
+				<a class="fb" href="/" target="_blank"><span></span></a>
 			</div>
 		</nav>
 	</section>
@@ -28,5 +28,36 @@
 </main>
 
 <footer>
-	<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+	<section class="footer-info">
+        <div class="c3 p1">
+          <h3>Cert Medical</h3>
+          <a href="/about">About us</a><br/>
+          <a href="/blog">Blog</a><br/>
+          <a href="/contacts">Contacts</a><br/>
+          <a href="/terms">Terms & Conditions</a>
+        </div><div class="c3 p1">
+          <h3>Services</h3>
+          <a href="/">CE Marking process</a><br/>
+          <a href="/">Technical File review</a><br/>
+          <a href="/">Medical Device testing</a><br/>
+          <a href="/">EC Declaration of Conformity</a><br/>
+          <a href="/">User manual and Labelling</a><br/>
+          <a href="/">ISO:13485 Implementation</a>
+        </div><div class="c3 p1">
+          <h3>Contacts</h3>
+          <a href="https://goo.gl/maps/UcmhCLRKwB9hua2c7" target="_blank">
+                Sofia p.k. 1618,<br>
+                168 Tsar Boris III Blvd.,<br>
+                Andromeda Business Center,<br>
+                3rd floor, office 31 
+           </a><br/>
+          <a href="/">
+            email:
+            <span>petar.emilov.petrov@gmail.com</span>
+          </a><br/>
+          <a href="/">
+            <span>0877 122 777</span>
+          </a>
+        </div>
+      </section>
 </footer>
