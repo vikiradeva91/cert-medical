@@ -1,0 +1,52 @@
+
+header .logo img { 
+    width: 145px !important;
+    padding: 15px;
+}
+
+@media all and (min-width: 961px){
+
+    header section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    header nav a {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 14px;
+        padding: 5px 15px;
+        margin-right: 5px;
+        transition: color 0.3s ease-in;
+        text-transform: uppercase;
+    }
+    header nav a.hover:hover {
+        color: #ffc857;
+        transition: color 0.3s ease-in;
+    }
+
+}
+
+@media all and (max-width: 960px){
+    nav {
+        padding-left: 10px;
+    }
+    nav a {
+        display: block;
+        text-align: left;
+        padding: 10px;
+        text-decoration: none;
+    }
+
+    nav a:hover {
+        border-left: 5px solid #ffc857;
+    }
+}

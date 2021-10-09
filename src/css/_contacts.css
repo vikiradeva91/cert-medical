@@ -1,0 +1,64 @@
+.green {
+    background: #19647e;
+    padding: 40px 0;
+}
+
+.green .green-width {
+    max-width: 1000px;
+    box-sizing: border-box;
+}
+
+.green h1 { 
+    font-size: 26px;
+    padding-left: 23px;
+}
+
+.green h2 { 
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.green h3 { font-weight: bold;}
+
+.green h1, .green h2, .green h3 { 
+    color: #fff;
+}
+
+
+.green, .green a, .green.login form legend {
+    color: #fff;
+}
+
+.green h1::after {
+    content: ' ';
+    display: block;
+    width: 100px;
+    height: 1px;
+    background-color: #ffc857;
+    border: none;
+    margin: 15px 0;
+}
+
+.green .contacts input, .green .contacts textarea {
+    margin-top: 5px;
+}
+
+.green p, .content p {
+    max-width: 750px;
+    margin: 10px auto;
+}
+
+
+
+@media all and (min-width: 801px) {
+    .pdg {
+        padding-left: 50px;
+    }
+}
+
+@media all and (max-width: 800px) {
+    .pdg {
+        padding-left: 37px;
+        padding-top: 20px;
+    }
+}

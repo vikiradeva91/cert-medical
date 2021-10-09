@@ -1,0 +1,265 @@
+.homeimg {
+    background-image: url(../img/operating-room.jpg), linear-gradient(45deg, #0851789d 10%, #85d0d89e 90%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: overlay;
+    background-size: cover;
+    min-height: 250px;
+  }
+  
+  .homeimg h1 {
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    font-weight: 700;
+  }
+  
+  section.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  
+  .services-title,
+  .steps-title {
+    color: #ffc857;
+    /* margin-top: 50px; */
+    text-align: center;
+  }
+  
+  section.row .CE-content h3 {
+    margin: 25px 0;
+  }
+  section.row .CE-content p {
+    line-height: 30px;
+    text-align: justify;
+  }
+  section.row .CE-img {
+    margin-top: 10px;
+  }
+  
+  .services.flex .service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+  }
+  
+  .calltoaction {
+    text-align: center;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100% );
+    padding: 40px 10px;
+    box-sizing: border-box;
+    margin-top: 50px ;
+  }
+  
+  .calltoaction h2 {
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  .calltoaction a.submit:hover {
+    background-color: #119da4;
+    color: #fff;
+    transition: background-color 0.5s ease, border 0.5s ease;
+  }
+  
+  .services.flex .service {
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 3px 12px rgba(95,92,120,0.12);
+  }
+  
+  .services .service {
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .services.flex .service img {
+      border: 1px solid #eee;
+      padding: 20px;
+      border-radius: 50%;
+      width: 54px;
+      margin: 10px 0 20px 0;
+  }
+  
+  .services.flex .service:hover h4 { color:#119da4;}
+  .services.flex .service:hover img { border: 1px solid #ffc857;}
+  
+  .steps  { 
+    display: grid;
+    margin: 60px auto;
+  }
+  
+  .steps .grid-item {
+    display: inline-grid;
+    text-align: center;
+  }
+  
+  .steps p {
+    font-size: 25px;
+    font-weight: bold;
+    color: #19647e;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  .grid-item b {
+    padding: 10px;
+  }
+  
+  .services-flex {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 0;
+  }
+  
+  
+  
+  
+  @media all and (min-width: 680px) {
+    .steps { grid-template-columns: 50% 50%; }
+  }
+  
+  @media all and (min-width: 961px) {
+    .homeimg h1 {
+      font-size: 60px;
+      padding: 90px;
+    }
+    section.row .CE-content {
+      flex: 0 0 65%;
+      max-width: 65%;
+    }
+    section.row .CE-img {
+      flex: 0 0 35%;
+      max-width: 35%;
+    }
+  
+    section.row .CE-content p {
+      padding-right: 50px;
+    }
+  
+    .calltoaction h2 {
+      font-size: 2.8284rem;
+    }
+  
+    .steps {  grid-template-columns: auto auto auto auto auto; }
+  
+  }
+  
+  /* CUSTOM RESPONSIVE */
+  
+  
+  @media all and (min-width: 320px) and (max-width: 600px) {
+      .services.flex .service { width: 100%; margin: 10px; }
+  }
+  
+  @media all and (min-width: 460px) and (max-width: 767px) {
+      .services.flex .service { width: calc(50% - 20px); margin: 10px; }
+  }
+  
+  @media all and (min-width: 767px) and (max-width: 959px) {
+      .services.flex .service { width: calc(33.333333333% - 20px); margin: 10px; }
+  }
+  
+  @media all and (min-width: 960px) {
+      .services.flex .service { width: calc(33.333333% - 80px); margin: 40px; }
+  }
+  
+  
+  /* ***** */
+  
+  @media all and (max-width: 960px) {
+  
+    main .homeimg {
+      position: relative;
+    }
+    
+    .homeimg h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 34px;
+    }
+  
+    .calltoaction h2 { font-size: 32px;}
+  
+    .steps { margin: 20px;}
+  
+    .services { padding: 0 10px;}
+  }
+  
+  
+  
+  /* ANIMATION */
+  
+  
+  .heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+  
+    animation-name: moveInLeft;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+  }
+  
+  @keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+  
+    80% {
+        transform: translateX(5px);
+    }
+  
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+  }
+  
+  
+  /* Animation */
+  
+  @keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+  
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+  }
+  
+  @-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+  
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+  }
+  
+  .animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both
+  }
+  
+  .animatedFadeInUp {
+    opacity: 0
+  }
+  
+  .fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+  }

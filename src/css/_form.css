@@ -1,0 +1,103 @@
+input[type="password"], input[type="text"], select, textarea {
+    font-family: sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 4px 8px;
+    line-height: 24px;
+    height: 32px;
+    border: 1px solid #999;
+    border-radius: 0;
+    background-color:#FFF;
+    color:    #000;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+form.contacts {
+    max-width: 640px;
+    margin: 0 auto;
+}
+form legend {
+    padding: 8px 0;
+    color: #555;
+}
+
+form legend.required::after {
+    content: ' *';
+    color:  #ffc857;
+}
+form fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.w100, 
+.w100 button, 
+.w100 input[type="password"], 
+.w100 input[type="text"], 
+.w100 select, 
+.w100 textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+label.checkbox input {
+    display: none;
+}
+
+label.checkbox span {
+    display: inline-block;
+    border: 1px solid #ffc857;
+    border-radius: 3px;
+    vertical-align: bottom;
+    margin-right: 6px;
+}
+
+label.checkbox input:checked + span {
+    background-image: url(../svg/check.svg);
+    background-color:  #ffc857;
+    background-position: center;
+}
+label.checkbox span, label.radiocheck span {
+    width: 16px;
+    height: 16px;
+    content: ' ';
+    margin-left: -30px;
+}
+
+label.checkbox {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    vertical-align: bottom;
+    display: inline-block;
+}
+label.checkbox, label.radiocheck {
+    line-height: 16px;
+    padding: 5px 20px 5px 30px;
+}
+
+button[type="submit"] {
+    text-transform: uppercase;
+    font-family: Montserrat,sans-serif;
+    font-size: 14px;
+    line-height: 25px;
+    text-decoration: none;
+    padding: 5px 20px;
+    display: inline-block;
+    color: #fff;
+    background-color: #ffc857;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    transition: background-color .5s ease,border .5s ease;
+    -webkit-appearance: none;
+}
