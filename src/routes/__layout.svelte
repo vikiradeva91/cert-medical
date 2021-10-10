@@ -51,12 +51,12 @@
                 Andromeda Business Center,<br>
                 3rd floor, office 31 
            </a><br/>
-          <a href="/">
+          <a href="mailto:petar.emilov.petrov@gmail.com">
             email:
             <span>petar.emilov.petrov@gmail.com</span>
           </a><br/>
           <a href="/">
-            <span>0877 122 777</span>
+            <span itemprop="telephone">0877 122 777</span>
           </a>
         </div>
       </section>
