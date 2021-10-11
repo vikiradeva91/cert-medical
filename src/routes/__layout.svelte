@@ -16,9 +16,9 @@
 			<a href="/about" class="fadein hover">ABOUT US</a>
 			<a href="/blog" class="fadein hover">BLOG</a>
 			<a href="/contacts" class="fadein hover">CONTACTS</a>
-			<div class="social">
+			<!-- <div class="social">
 				<a class="fb" href="/" target="_blank"><span></span></a>
-			</div>
+			</div> -->
 		</nav>
 	</section>
 </header>

@@ -1,7 +1,13 @@
-<div class='center'>
-    <div class='_404'>404</div>
-    <hr>
-    <div class='_1'>THE PAGE</div>
-    <div class='_2'>WAS NOT FOUND</div>
-    <a class='btn' href='/'>BACK TO HOME</a>
-</div>
+<section class="error" style="max-width: 640px; ">
+
+    <h2>Грешка 404! Страницата не е намерена</h2>
+    <p>Възможни причини:
+        </p><ul>
+            <li>Коригирали сте ръчно url адреса в браузъра</li>
+            <li>Препратил ви е невалиден или сгрешен линк от друг сайт</li>
+            <li>Променили сте по невнимание адреса, който отваряте</li>
+        </ul>
+    <p></p>
+    <a href="/">Към начална страница</a>
+
+</section>

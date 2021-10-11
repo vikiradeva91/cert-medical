@@ -71,6 +71,10 @@ a {
 
 ul { list-style: none;}
 
+ul li {
+    padding: 5px 0;
+}
+
 ol {
     margin: 0;
     padding: 0;
