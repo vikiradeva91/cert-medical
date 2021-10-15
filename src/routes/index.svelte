@@ -15,8 +15,7 @@
 </div>
 
 <h1 class="content-title mrg-top">
-Obtaining CE Certification for Medical Devices
-<hr class="hr-color" />
+	<i>―   Obtaining CE Certification for Medical Devices   ―</i>
 </h1>
 
 <section class="row p2">
@@ -58,12 +57,11 @@ Obtaining CE Certification for Medical Devices
 	</section>
 	<div class="calltoaction">
 	  <h2>Set the date for your market access</h2>
-	  <a class="submit" href="#">Get started</a>
+	  <a class="submit" href="/">Get started</a>
 	</div>
 
 	<h1 class="services-title mrg-top">
-	  Our services
-	  <hr class="hr-color" />
+	 	<i>―    Our services   ―</i>
 	</h1>
 
 	<section class="services flex">
@@ -94,11 +92,56 @@ Obtaining CE Certification for Medical Devices
 	</section>
 
 	<h1 class="steps-title mrg-top">
-	  Obtaining a EC declaration of conformity for your medical device
-	  <hr class="hr-color" />
+	 <i>―   Obtaining a EC declaration of conformity for your medical device   ―</i>
 	</h1>
 
-	<section class="steps ">          
+	<div class="container">                      	
+		<div class="row">
+			<div class="col">
+				<div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
+					<div class="timeline-step">
+						<div class="timeline-content" data-original-title="STEP 1">
+							<div class="inner-circle"></div>
+							<p class="h6 mt-3 mb-1" style="padding: 16px 0;"> <b> STEP 1 </b> </p>
+							<p class="h6 text-muted mb-0 mb-lg-0">Identify EU requirements for your product</p>
+						</div>
+					</div>
+					<div class="timeline-step">
+						<div class="timeline-content"  data-original-title="STEP 2">
+							<div class="inner-circle"></div>
+							<p class="h6 mt-3 mb-1" style="padding: 16px 0;"> <b> STEP 2 </b> </p>
+							<p class="h6 text-muted mb-0 mb-lg-0">Assess level of conformity and testing</p>
+						</div>
+					</div>
+					<div class="timeline-step">
+						<div class="timeline-content"  data-original-title="STEP 3">
+							<div class="inner-circle"></div>
+							<p class="h6 mt-3 mb-1" style="padding: 16px 0;"> <b> STEP 3 </b> </p>
+							<p class="h6 text-muted mb-0 mb-lg-0">Assistance and review of the technical documentation</p>
+						</div>
+					</div>
+					<div class="timeline-step">
+						<div class="timeline-content"  data-original-title="STEP 4">
+							<div class="inner-circle"></div>
+							<p class="h6 mt-3 mb-1" style="padding: 16px 0;"><b> STEP 4 </b> </p>
+							<p class="h6 text-muted mb-0 mb-lg-0">CE Mark can be affixed and declaration of conformity is issued</p>
+						</div>
+					</div>
+					<div class="timeline-step mb-0">
+						<div class="timeline-content"  data-original-title="STEP 5">
+							<div class="inner-circle"></div>
+							<p class="h6 mt-3 mb-1" style="padding: 16px 0;"><b> STEP 5 </b> </p>
+							<p class="h6 text-muted mb-0 mb-lg-0">Product is certified and can be traded in the EU</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+
+
+	<!-- <section class="steps ">          
 		<div class="grid-item animated animatedFadeInUp fadeInUp">
 		  <p>STEP 01</p>
 		  <b>Identify EU requirements for your product</b>
@@ -119,4 +162,4 @@ Obtaining CE Certification for Medical Devices
 		  <p>STEP 05</p>
 		  <b>Product is certified and can be traded in the EU</b>
 		</div>
-</section>
+	</section> -->

@@ -28,6 +28,7 @@ body {
 main { 
     display: block; 
     overflow: hidden; 
+    box-sizing: border-box;
 }
 img {
     border: none;
@@ -56,6 +57,46 @@ a {
     border-top: 3px solid #19647e;
     border-radius: 10px;
 }
+
+
+/****** LINE ******/
+
+/* .line::before {
+    right: 30px;
+}
+
+.line::after {
+    right: -30px;
+}
+
+.line::before, .line::after {
+    content: '';
+    border: 1px solid #19647e;
+    width: 100px;
+    display: inline-block;
+    position: relative;
+    top: -10px;
+}
+
+@media all and (max-width: 980px) {
+    h1 {
+        font-size: 27px;
+    }
+    .line::before, .line::after {
+        width: 50px;
+    }
+    .line::before {
+        right: 15px;
+    }
+    
+    .line::after {
+        right: -15px;
+    }
+} */
+
+
+
+/****** LINE END ******/
 
 *:focus { outline: 0; }
 
