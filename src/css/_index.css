@@ -128,7 +128,6 @@ section.row .CE-img {
 @media all and (min-width: 961px) {
   .homeimg h1 {
     font-size: 60px;
-    padding: 90px;
   }
   section.row .CE-content {
     flex: 0 0 65%;
@@ -173,17 +172,15 @@ section.row .CE-img {
 
 /* ***** */
 
+main .homeimg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media all and (max-width: 960px) {
 
-  main .homeimg {
-    position: relative;
-  }
-  
   .homeimg h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-size: 34px;
   }
 
