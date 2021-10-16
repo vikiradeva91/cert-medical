@@ -10,4 +10,43 @@
     <p></p>
     <a href="/">Към начална страница</a>
 
+    <hr>
+
+    <div class="flex center align" style="height: 300px;">
+        <h1>test</h1>
+    </div>
+
+    <div class="stack align">
+        <span>1</span>
+        <span>1</span>
+        <span>1</span>
+        <span>1</span>
+        <span>1</span>
+    </div>
+
+    <div class="split equal">
+        <div>one</div>
+        <div>two</div>
+        <div>three</div>
+    </div>
+
+    <div class="split separate">
+        <div>one</div>
+        <div>two</div>
+    </div>
+
+    <div class="flex end">
+        <div class="third">
+            test
+        </div>
+    </div>
+
 </section>
+
+<style>
+    div {
+        background-color: antiquewhite;
+        margin: 2px;
+        border: 1px dotted gray;
+    }
+</style>

@@ -1,0 +1,64 @@
+.split,
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.equal > * {
+    flex: 1;
+}
+
+.justify {
+    justify-content: space-around;
+}
+
+.separate,
+.spread,
+.aside {
+    justify-content: space-between;
+    /* align-content: space-between; */
+}
+
+.center {
+    justify-content: center;
+}
+
+.end {
+    justify-content: end;
+}
+
+.start {
+    justify-content: start;
+}
+
+.align {
+    align-items: center;
+    /* align-self: center; */
+}
+
+.stretch {
+    align-content: stretch;
+}
+
+/* Flex basis */
+.auto {
+    flex: auto;
+}
+
+.full {
+    flex: 1;
+}
+
+.half {
+    flex-basis: 50%;
+}
+
+.third {
+    flex-basis: calc(100% / 3);
+}
