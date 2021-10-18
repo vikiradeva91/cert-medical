@@ -5,10 +5,13 @@ footer {
 footer h3 { color: #fff; }
 
 footer section.footer-info {
-    padding: 4em 0;
-    
     background-position: center;
     background-repeat: no-repeat;
+}
+
+footer .footer-pdg {
+    padding-top:4em;
+    padding-bottom: 2em;
 }
 
 footer div h3::after {
@@ -23,13 +26,30 @@ footer div h3::after {
 footer section.footer-info a {
     margin: 14px 0;
     line-height: 30px;
+}
+
+footer section.footer-info a,
+footer .copyright,
+footer .copyright a {
     color: #fff;
+}
+
+footer .copyright {
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 12px;
 }
 
 @media all and (min-width:801px) {
     footer section.footer-info { 
         background-image:url(../img/footer2.png);
         background-size: contain; 
+    }
+
+    footer .copyright {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 
@@ -46,3 +66,4 @@ footer section.footer-info a {
         margin: 15px auto;
     }
 }
+

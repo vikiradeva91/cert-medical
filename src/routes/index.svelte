@@ -139,27 +139,3 @@
 		</div>
 	</div>
 		
-
-
-	<!-- <section class="steps ">          
-		<div class="grid-item animated animatedFadeInUp fadeInUp">
-		  <p>STEP 01</p>
-		  <b>Identify EU requirements for your product</b>
-		</div>
-		<div class="grid-item animated animatedFadeInUp fadeInUp">
-		  <p>STEP 02</p>
-		  <b>Assess level of conformity and testing</b>
-		</div>
-		<div class="grid-item animated animatedFadeInUp fadeInUp">
-		  <p>STEP 03</p>
-		  <b>Assistance and review of the technical documentation</b>
-		</div>
-		<div class="grid-item animated animatedFadeInUp fadeInUp">
-		  <p>STEP 04</p>
-		  <b style="padding-top: 32px;">CE Mark can be affixed and declaration of conformity is issued</b>
-		</div>
-		<div class="grid-item animated animatedFadeInUp fadeInUp">
-		  <p>STEP 05</p>
-		  <b>Product is certified and can be traded in the EU</b>
-		</div>
-	</section> -->

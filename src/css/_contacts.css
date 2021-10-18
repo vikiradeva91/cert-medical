@@ -53,6 +53,7 @@
 @media all and (min-width: 801px) {
     .pdg {
         padding-left: 50px;
+        padding-top: 30px;
     }
 }
 
