@@ -1,3 +1,10 @@
+/* .rules {
+    text-align: center;
+} */
+
 .rules h1 {
     color: #ffc857;
+}
+.rules p {
+    margin: 5px 0 14px;
 }
