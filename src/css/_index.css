@@ -23,7 +23,6 @@ section.row {
 .services-title,
 .steps-title {
   color: #ffc857;
-  /* margin-top: 50px; */
   text-align: center;
 }
 
@@ -88,23 +87,6 @@ section.row .CE-img {
 .services.flex .service:hover h4 { color:#119da4;}
 .services.flex .service:hover img { border: 1px solid #ffc857;}
 
- /* .steps  { 
-  display: grid;
-  margin: 60px auto;
-}
-
-.steps .grid-item {
-  display: inline-grid;
-  text-align: center;
-}
-
-.steps p {
-  font-size: 25px;
-  font-weight: bold;
-  color: #19647e;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-} */
-
 .grid-item b {
   padding: 10px;
 }
@@ -113,16 +95,6 @@ section.row .CE-img {
   display: flex;
   flex-wrap: wrap;
   padding: 30px 0;
-}
-
-
-
-
-
-
-
-@media all and (min-width: 680px) {
-  /* .steps { grid-template-columns: 50% 50%; } */
 }
 
 @media all and (min-width: 961px) {

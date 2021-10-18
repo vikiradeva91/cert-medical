@@ -48,7 +48,7 @@
           <b>
             <a href="mailto:petar.emilov.petrov@gmail.com">petar.emilov.petrov@gmail.com </a> <br/>
           </b>
-          0877 122 777    
+          <a href="tel:+359877122777" itemprop="telephone">0877 122 777 </a>    
         </p>
       </div>
     </section>
