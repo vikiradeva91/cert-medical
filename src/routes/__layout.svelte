@@ -64,8 +64,8 @@
         <section class="copyright"> 
           <div>Copyright © 2021 Cert Medical LTD </div> 
           <div class="copy-mails">
-            Изработка на фирмен сайт - <a  href="mailto:viki.radeva91@gmail.com">Виктория Радева </a> &
-            <a  href="mailto:chavdar84@gmail.com">Чавдар Ангелов</a>
+            Development of a company website - <a  href="mailto:viki.radeva91@gmail.com">Viktoriya Radeva </a> &
+            <a  href="mailto:chavdar84@gmail.com">Chavdar Angelov</a>
           </div>
         </section>
       </section>
