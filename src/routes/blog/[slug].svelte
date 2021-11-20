@@ -1,9 +1,21 @@
 <script context="module">
-	export const prerender = true;
+	import faker from 'faker';
+	import moment from 'moment';
+	export async function load() {
+		let post = {
+			title: faker.lorem.sentence(),
+			body: faker.lorem.sentences(50),
+			created: faker.date.past()
+		};
+
+		return {
+			props: { post }
+		};
+	}
 </script>
 
 <script>
-	//
+	export let post;
 </script>
 
 <svelte:head>
@@ -21,25 +33,7 @@
 <section class="row p2">
 	<div class="CE-content">
 		<p>
-			Have you finished designing, developing, and manufacturing, and is your product ready to enter
-			the market? When trading medical devices on the European market, obtaining the CE-mark is
-			mandatory for every company or entity. With the CE-mark you declare that the medical device is
-			in compliance with all legal requirements of the European market. The Medical Device
-			Regulation (EU) 2017/745 is a set of requirements and processes for you as responsible party.
-			When your medical device is in accordance with this set of requirements, the CE-mark can be
-			affixed and the medical device can be legally introduced to the European market.
-		</p>
-		<h3 style="font-weight: bold">MEETING THE EU MEDICAL DEVICE REGULATIONS</h3>
-		<p>
-			As responsible entity you have to ensure that your medical device and its documentation meet
-			the EU medical device directive. Where do you start? Every case is different and has its own
-			unique characteristics. We have years of experience in medical product certification in the EU
-			and internationally, and offer swift and tailored certification of your medical device. Our
-			consultants have complete knowledge of the EU’s medical device classification standards, so if
-			you are unsure whether your product is classified as a medical device in Europe, we can
-			confirm for you. With our certification process, we guarantee your medical device and
-			documentation will meet all mandatory provisions. All we need is specific information of the
-			medical device and we will arrange the rest.
+			{post.body}
 		</p>
 	</div>
 	<div class="CE-img">
