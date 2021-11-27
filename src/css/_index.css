@@ -1,5 +1,5 @@
 .homeimg {
-  background-image: url(../img/operating-room.jpg), linear-gradient(45deg, #0851789d 10%, #85d0d89e 90%);
+  background-image: url(/img/operating-room.jpg), linear-gradient(45deg, #0851789d 10%, #85d0d89e 90%);
   background-repeat: no-repeat;
   background-position: center;
   background-blend-mode: overlay;

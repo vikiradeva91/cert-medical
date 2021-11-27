@@ -1,7 +1,7 @@
 <script context="module">
 	import faker from 'faker';
 	import moment from 'moment';
-	export async function load() {
+	export async function load({ page }) {
 		let posts = new Array(20).fill().map(() => {
 			const title = faker.lorem.sentence();
 			return {
@@ -30,7 +30,7 @@
 		{#each posts as post}
 			<div class="blog-img c43 m1">
 				<a href="/">
-					<img src="img/blog1.jpg" alt="" />
+					<img src="/img/blog1.jpg" alt="" />
 				</a>
 				<a class="tag" href="/">{moment(post.created).format('MMMM DD, YYYY')}</a>
 				<div>

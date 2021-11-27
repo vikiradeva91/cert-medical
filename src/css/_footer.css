@@ -42,7 +42,7 @@ footer .copyright {
 
 @media all and (min-width:801px) {
     footer section.footer-info { 
-        background-image:url(../img/footer2.png);
+        background-image:url(/img/footer2.png);
         background-size: contain; 
     }
 
@@ -55,7 +55,7 @@ footer .copyright {
 
 @media all and (max-width:800px) {
     footer section.footer-info { 
-        background-image:url(../img/footer3.png); 
+        background-image:url(/img/footer3.png); 
         background-size: auto;
     }
 

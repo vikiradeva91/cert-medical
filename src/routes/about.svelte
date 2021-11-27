@@ -11,11 +11,11 @@
         <p style="font-weight: bold; font-size: 20px;">We make the future safe.</p><br/>
         <a href="contacts.html" class="submit">Learn more about us</a>
     </div><div class="c2 ">
-        <img src="img/about.jpg" alt="">
+        <img src="/img/about.jpg" alt="">
     </div>
 
     <div class="c2 hidden">
-        <img src="img/about2.jpg" alt="">
+        <img src="/img/about2.jpg" alt="">
     </div><div class="c2 p2">
         <h1>What we do</h1><br/>
         <p>We offer expertise in the field of certification for designers, manufacturers, exporters, importers and distributors of products. We ensure products comply with all legal requirements in respect of product safety. We supervise compliance with European product legislation in respect of CE-marking, international regulations and other government matters pertaining to product safety.</p>
