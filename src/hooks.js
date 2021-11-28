@@ -1,25 +1,30 @@
-import cookie from 'cookie';
-import { v4 as uuid } from '@lukeed/uuid';
+// import cookie from 'cookie';
 
-export const handle = async ({ request, resolve }) => {
-	const cookies = cookie.parse(request.headers.cookie || '');
-	request.locals.userid = cookies.userid || uuid();
+// export const handle = async ({ request, resolve }) => {
+// 	// const cookies = cookie.parse(request.headers.cookie || '');
+// 	// request.locals.userid = cookies.userid || uuid();
 
-	// TODO https://github.com/sveltejs/kit/issues/1046
-	if (request.query.has('_method')) {
-		request.method = request.query.get('_method').toUpperCase();
-	}
+//     console.log("request", request);
 
-	const response = await resolve(request);
+// 	// TODO https://github.com/sveltejs/kit/issues/1046
+// 	// if (request.query.has('_method')) {
+// 	// 	request.method = request.query.get('_method').toUpperCase();
+// 	// }
 
-	if (!cookies.userid) {
-		// if this is the first time the user has visited this app,
-		// set a cookie so that we recognise them when they return
-		response.headers['set-cookie'] = cookie.serialize('userid', request.locals.userid, {
-			path: '/',
-			httpOnly: true
-		});
-	}
+// 	const response = await resolve(request);
 
-	return response;
-};
+// 	// if (!cookies.userid) {
+// 	// 	// if this is the first time the user has visited this app,
+// 	// 	// set a cookie so that we recognise them when they return
+// 	// 	response.headers['set-cookie'] = cookie.serialize('userid', request.locals.userid, {
+// 	// 		path: '/',
+// 	// 		httpOnly: true
+// 	// 	});
+// 	// }
+
+// 	return response;
+// };
+
+// export const getSession = (request) => {
+//     console.log("session request", request);
+// }

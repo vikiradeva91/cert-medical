@@ -1,3 +1,11 @@
+<script context="module">
+	export async function load({ page }) {
+        console.log("page", page);
+
+        return {};
+	}
+</script>
+
 <script>
 	import '../app.css';
 </script>

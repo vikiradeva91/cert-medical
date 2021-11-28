@@ -1,7 +1,7 @@
 <script context="module">
 	import faker from 'faker';
 	import moment from 'moment';
-	export async function load({ page }) {
+	export async function load() {
 		let posts = new Array(20).fill().map(() => {
 			const title = faker.lorem.sentence();
 			return {
