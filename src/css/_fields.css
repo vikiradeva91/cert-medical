@@ -1,0 +1,9 @@
+
+
+.form label {
+    display: block;
+}
+
+.form button {
+    cursor: pointer;
+}

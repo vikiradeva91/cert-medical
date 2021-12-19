@@ -1,20 +1,29 @@
 <div class="grid">
-    <header>
-        <h2>Header</h2>
-    </header>
-    <aside>
-        <ul>
-            <li>
-                <a href="/">Posts</a>
-            </li>
-            <li>
-                <a href="/">Users</a>
-            </li>
-        </ul>
-    </aside>
-    <main>
-        <slot />
-    </main>
+	<header>
+		<h2>Header</h2>
+	</header>
+	<aside>
+		<ul>
+			<li>
+				<a href="/">Pages</a>
+			</li>
+			<li>
+				<a href="/admin/posts">Posts</a>
+			</li>
+			<li>
+				<a href="/">Inquries</a>
+			</li>
+			<li>
+				<a href="/">Users</a>
+			</li>
+			<li>
+				<a href="/">Settings</a>
+			</li>
+		</ul>
+	</aside>
+	<main>
+		<slot />
+	</main>
 </div>
 
 <style>
@@ -45,7 +54,7 @@
 		grid-column-end: 2;
 	}
 	main {
-		background-color: #59b67d;
+		/* background-color: #59b67d; */
 		grid-row-start: 2;
 		grid-column-start: 2;
 
