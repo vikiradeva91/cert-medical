@@ -14,6 +14,8 @@
 			console.log(error);
 		}
 
+		console.log('test', post);
+
 		return {
 			props: { post }
 		};

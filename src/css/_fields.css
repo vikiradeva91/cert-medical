@@ -7,3 +7,8 @@
 .form button {
     cursor: pointer;
 }
+
+.form .field-error {
+    color: crimson;
+    font-size: smaller;
+}
