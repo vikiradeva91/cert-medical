@@ -5,6 +5,9 @@
 	<aside>
 		<ul>
 			<li>
+				<a href="/admin">Dashboard</a>
+			</li>
+			<li>
 				<a href="/">Pages</a>
 			</li>
 			<li>

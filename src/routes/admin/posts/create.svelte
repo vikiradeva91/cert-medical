@@ -5,7 +5,7 @@
 
 	//
 	import TextField from '$lib/components/fields/TextField.svelte';
-	import TextareaField from '$lib/components/fields/TextareaField.svelte';
+	import RichTextareaField from '$lib/components/fields/RichTextareaField.svelte';
 
 	let input = {};
 	let errors = {};
@@ -39,10 +39,10 @@
 		/>
 	</div>
 	<div>
-		<TextareaField
+		<RichTextareaField
 			label="Body"
 			name="body"
-			bind:value={input.body}
+			bind:html={input.body}
 			error={errors.body && errors.body.message}
 		/>
 	</div>

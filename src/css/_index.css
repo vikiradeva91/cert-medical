@@ -1,5 +1,14 @@
 @import url("./_fields.css");
 
+/* Resets */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 .homeimg {
   background-image: url(/img/operating-room.jpg), linear-gradient(45deg, #0851789d 10%, #85d0d89e 90%);
   background-repeat: no-repeat;
@@ -31,10 +40,12 @@ section.row {
 section.row .CE-content h3 {
   margin: 25px 0;
 }
+
 section.row .CE-content p {
   line-height: 30px;
   text-align: justify;
 }
+
 section.row .CE-img {
   margin-top: 10px;
 }
@@ -49,10 +60,10 @@ section.row .CE-img {
 .calltoaction {
   text-align: center;
   background: rgb(2, 0, 36);
-  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100% );
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
   padding: 40px 10px;
   box-sizing: border-box;
-  margin-top: 50px ;
+  margin-top: 50px;
 }
 
 .calltoaction h2 {
@@ -68,9 +79,9 @@ section.row .CE-img {
 }
 
 .services.flex .service {
-    color: #fff;
-    text-align: center;
-    box-shadow: 0 3px 12px rgba(95,92,120,0.12);
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 3px 12px rgba(95, 92, 120, 0.12);
 }
 
 .services .service {
@@ -79,15 +90,20 @@ section.row .CE-img {
 }
 
 .services.flex .service img {
-    border: 1px solid #eee;
-    padding: 20px;
-    border-radius: 50%;
-    width: 54px;
-    margin: 10px 0 20px 0;
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 50%;
+  width: 54px;
+  margin: 10px 0 20px 0;
 }
 
-.services.flex .service:hover h4 { color:#119da4;}
-.services.flex .service:hover img { border: 1px solid #ffc857;}
+.services.flex .service:hover h4 {
+  color: #119da4;
+}
+
+.services.flex .service:hover img {
+  border: 1px solid #ffc857;
+}
 
 .grid-item b {
   padding: 10px;
@@ -103,10 +119,12 @@ section.row .CE-img {
   .homeimg h1 {
     font-size: 60px;
   }
+
   section.row .CE-content {
     flex: 0 0 65%;
     max-width: 65%;
   }
+
   section.row .CE-img {
     flex: 0 0 35%;
     max-width: 35%;
@@ -128,19 +146,31 @@ section.row .CE-img {
 
 
 @media all and (min-width: 320px) and (max-width: 600px) {
-    .services.flex .service { width: 100%; margin: 10px; }
+  .services.flex .service {
+    width: 100%;
+    margin: 10px;
+  }
 }
 
 @media all and (min-width: 460px) and (max-width: 767px) {
-    .services.flex .service { width: calc(50% - 20px); margin: 10px; }
+  .services.flex .service {
+    width: calc(50% - 20px);
+    margin: 10px;
+  }
 }
 
 @media all and (min-width: 767px) and (max-width: 959px) {
-    .services.flex .service { width: calc(33.333333333% - 20px); margin: 10px; }
+  .services.flex .service {
+    width: calc(33.333333333% - 20px);
+    margin: 10px;
+  }
 }
 
 @media all and (min-width: 960px) {
-    .services.flex .service { width: calc(33.333333% - 80px); margin: 40px; }
+  .services.flex .service {
+    width: calc(33.333333% - 80px);
+    margin: 40px;
+  }
 }
 
 
@@ -158,11 +188,15 @@ main .homeimg {
     font-size: 34px;
   }
 
-  .calltoaction h2 { font-size: 32px;}
+  .calltoaction h2 {
+    font-size: 32px;
+  }
 
   /* .steps { margin: 20px;} */
 
-  .services { padding: 0 10px;}
+  .services {
+    padding: 0 10px;
+  }
 
   .content-title,
   .services-title,
@@ -188,17 +222,17 @@ main .homeimg {
 
 @keyframes moveInLeft {
   0% {
-      opacity: 0;
-      transform: translateX(-100px);
+    opacity: 0;
+    transform: translateX(-100px);
   }
 
   80% {
-      transform: translateX(5px);
+    transform: translateX(5px);
   }
 
   100% {
-      opacity: 1;
-      transform: translate(0);
+    opacity: 1;
+    transform: translate(0);
   }
 }
 
@@ -207,23 +241,23 @@ main .homeimg {
 
 @keyframes fadeInUp {
   from {
-      transform: translate3d(0,40px,0)
+    transform: translate3d(0, 40px, 0)
   }
 
   to {
-      transform: translate3d(0,0,0);
-      opacity: 1
+    transform: translate3d(0, 0, 0);
+    opacity: 1
   }
 }
 
 @-webkit-keyframes fadeInUp {
   from {
-      transform: translate3d(0,40px,0)
+    transform: translate3d(0, 40px, 0)
   }
 
   to {
-      transform: translate3d(0,0,0);
-      opacity: 1
+    transform: translate3d(0, 0, 0);
+    opacity: 1
   }
 }
 
@@ -251,71 +285,63 @@ main .homeimg {
 }
 
 .timeline-steps {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap
 }
 
 .timeline-steps .timeline-step {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin: 1.7rem
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 1.7rem
 }
 
 @media (min-width:900px) {
-    .timeline-steps .timeline-step:not(:last-child):after {
-        content: "";
-        display: block;
-        border-top: .25rem dotted #119da4;
-        width: 7.46rem;
-        position: absolute;
-        left: 7.5rem;
-        top: .3125rem
-    }
-    .timeline-steps .timeline-step:not(:first-child):before {
-        content: "";
-        display: block;
-        border-top: .25rem dotted #119da4;
-        width: 5.8125rem;
-        position: absolute;
-        right: 7.5rem;
-        top: .3125rem
-    }
+  .timeline-steps .timeline-step:not(:last-child):after {
+    content: "";
+    display: block;
+    border-top: .25rem dotted #119da4;
+    width: 7.46rem;
+    position: absolute;
+    left: 7.5rem;
+    top: .3125rem
+  }
+
+  .timeline-steps .timeline-step:not(:first-child):before {
+    content: "";
+    display: block;
+    border-top: .25rem dotted #119da4;
+    width: 5.8125rem;
+    position: absolute;
+    right: 7.5rem;
+    top: .3125rem
+  }
 }
 
 .timeline-steps .timeline-content {
-    width: 12rem;
-    text-align: center
+  width: 12rem;
+  text-align: center
 }
 
 .timeline-steps .timeline-content .inner-circle {
-    border-radius: 1.5rem;
-    height: 1rem;
-    width: 1rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #119da4
+  border-radius: 1.5rem;
+  height: 1rem;
+  width: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #119da4
 }
 
 .timeline-steps .timeline-content .inner-circle:before {
-    content: "";
-    background-color: #119da4;
-    display: inline-block;
-    height: 3rem;
-    width: 3rem;
-    min-width: 3rem;
-    border-radius: 6.25rem;
-    opacity: .5
+  content: "";
+  background-color: #119da4;
+  display: inline-block;
+  height: 3rem;
+  width: 3rem;
+  min-width: 3rem;
+  border-radius: 6.25rem;
+  opacity: .5
 }
-
-
-
-
-
-
-
-
-

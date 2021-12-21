@@ -1,20 +1,16 @@
 <script context="module">
-	import axios from 'axios';
-	import config from '../../../../config';
-
+	import { api } from '../../../../config';
 	export async function load({ page }) {
 		const { id } = page.params;
 
 		let post = {};
 
 		try {
-			const response = await axios.get(`${config.api.url}/post/${id}`);
+			const response = await axios.get(`${api.url}/post/${id}`);
 			post = response.data;
 		} catch (error) {
 			console.log(error);
 		}
-
-		console.log('test', post);
 
 		return {
 			props: { post }
@@ -23,25 +19,51 @@
 </script>
 
 <script>
-	import TextareaField from '$lib/components/fields/TextareaField.svelte';
+	import axios from 'axios';
+
+	//
 	import TextField from '$lib/components/fields/TextField.svelte';
+	import RichTextareaField from '$lib/components/fields/RichTextareaField.svelte';
 
 	export let post;
 
-	const handleUpdate = () => {
-		console.log('update');
+	let errors = {};
+
+	const handleUpdate = async () => {
+		try {
+			const response = await axios.patch(`${api.url}/post/${post._id}`, post);
+			post = response.data;
+		} catch (error) {
+			errors = error.response.data.errors;
+			console.log(error.response.data);
+		}
 	};
 </script>
 
 <div class="form">
 	<div>
-		<TextField label="Title" name="title" value={post.title} />
+		<TextField
+			label="Title"
+			name="title"
+			value={post.title}
+			error={errors.title && errors.title.message}
+		/>
 	</div>
 	<div>
-		<TextField label="Slug" name="slug" value={post.slug} />
+		<TextField
+			label="Slug"
+			name="slug"
+			value={post.slug}
+			error={errors.slug && errors.slug.message}
+		/>
 	</div>
 	<div>
-		<TextareaField label="Body" name="body" value={post.body} />
+		<RichTextareaField
+			label="Body"
+			name="body"
+			bind:html={post.body}
+			error={errors.body && errors.body.message}
+		/>
 	</div>
 	<div>
 		<button on:click={handleUpdate}>Update</button>
