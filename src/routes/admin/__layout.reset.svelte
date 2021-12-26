@@ -14,7 +14,7 @@
 				<a href="/admin/posts">Posts</a>
 			</li>
 			<li>
-				<a href="/">Inquries</a>
+				<a href="/admin/inquiries">Inquries</a>
 			</li>
 			<li>
 				<a href="/">Users</a>

@@ -22,8 +22,8 @@
 	import axios from 'axios';
 
 	//
-	import TextField from '$lib/components/fields/TextField.svelte';
-	import RichTextareaField from '$lib/components/fields/RichTextareaField.svelte';
+	import TextField from '$lib/components/admin/fields/TextField.svelte';
+	import RichTextareaField from '$lib/components/admin/fields/RichTextareaField.svelte';
 
 	export let post;
 

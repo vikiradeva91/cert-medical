@@ -4,8 +4,8 @@
 	import { goto } from '$app/navigation';
 
 	//
-	import TextField from '$lib/components/fields/TextField.svelte';
-	import RichTextareaField from '$lib/components/fields/RichTextareaField.svelte';
+	import TextField from '$lib/components/admin/fields/TextField.svelte';
+	import RichTextareaField from '$lib/components/admin/fields/RichTextareaField.svelte';
 
 	let input = {};
 	let errors = {};

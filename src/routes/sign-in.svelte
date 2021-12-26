@@ -1,6 +1,6 @@
 <script>
-	import PasswordField from '../lib/components/fields/PasswordField.svelte';
-	import EmailField from '../lib/components/fields/EmailField.svelte';
+	import PasswordField from '../lib/components/admin/fields/PasswordField.svelte';
+	import EmailField from '../lib/components/admin/fields/EmailField.svelte';
 </script>
 
 <div class="container flex center">

@@ -1,0 +1,65 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: auto;
+}
+
+table td,
+table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #ddd;
+}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04aa6d;
+    color: white;
+}
+
+button {
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.pagination li {
+    margin: 0 1px;
+}
+
+.pagination {
+    display: flex;
+    padding: 10px 0;
+}
+
+.pagination a {
+    display: block;
+    padding: 0.5em;
+    margin-right: 5px;
+    border: 1px solid salmon;
+}
+
+.pagination a.current {
+    pointer-events: none;
+    cursor: default;
+    border: 1px solid gainsboro;
+}

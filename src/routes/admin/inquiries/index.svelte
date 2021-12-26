@@ -11,7 +11,7 @@
 		let data = [];
 
 		try {
-			const response = await axios.post(`${config.api.url}/query/post`, { $limit, $skip });
+			const response = await axios.post(`${config.api.url}/query/inquiry`, { $limit, $skip });
 			data = response.data;
 		} catch (error) {
 			console.log(error);
@@ -35,27 +35,28 @@
 </script>
 
 <div>
-	<h3>Posts</h3>
-	<div><a href="/admin/posts/create">Create new post</a></div>
+	<h3>Inquiries</h3>
 	<table>
 		<tr>
 			<th>#</th>
-			<th>Title</th>
+			<th>Name</th>
+			<th>Email</th>
 			<th>Created</th>
 			<th>Actions</th>
 		</tr>
-		{#each data.items as post, i}
+		{#each data.items as item, i}
 			<tr>
-				<td>{post._id.slice(-7)}</td>
-				<td>{post.title}</td>
-				<td>{moment(post.createdAt).format('YYYY-MM-DD HH:mm:ss')}</td>
+				<td>{item._id.slice(-7)}</td>
+				<td>{item.name}</td>
+				<td>{item.email}</td>
+				<td>{moment(item.createdAt).format('YYYY-MM-DD HH:mm:ss')}</td>
 				<td>
-					<a href="/admin/posts/update/{post._id}">Edit</a>
-					<button on:click={() => handleDelete(post._id)}>Delete</button>
+					<a href="/admin/inquiries/update/{item._id}">Edit</a>
+					<button on:click={() => handleDelete(item._id)}>Delete</button>
 				</td>
 			</tr>
 		{/each}
 	</table>
 
-	<PaginationNav currentPage={p} path="posts" total={Math.ceil(data.total / 10)} />
+	<PaginationNav currentPage={p} path="inquiries" total={Math.ceil(data.total / 10)} />
 </div>
