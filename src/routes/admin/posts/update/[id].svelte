@@ -31,7 +31,7 @@
 
 	const handleUpdate = async () => {
 		try {
-			const response = await axios.patch(`${api.url}/post/${post._id}`, post);
+			const response = await axios.patch(`${api.url}/post/${post._id}`, { $set: post });
 			post = response.data;
 		} catch (error) {
 			errors = error.response.data.errors;

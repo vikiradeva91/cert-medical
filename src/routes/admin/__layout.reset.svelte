@@ -8,7 +8,7 @@
 				<a href="/admin">Dashboard</a>
 			</li>
 			<li>
-				<a href="/">Pages</a>
+				<a href="/admin/pages">Pages</a>
 			</li>
 			<li>
 				<a href="/admin/posts">Posts</a>

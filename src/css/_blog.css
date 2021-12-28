@@ -3,9 +3,12 @@
     padding: 50px;
 }
 
-.bg { background: #f7f7f7;}
+.bg {
+    background: #f7f7f7;
+}
+
 .blog {
-    padding: 50px 0 ;
+    padding: 50px 0;
     margin-bottom: -5px;
 }
 
@@ -17,19 +20,20 @@
     border-bottom: 1px solid #cecece;
 }
 
-.blog-img h2, .blog-img p { margin: 20px;}
+.blog-img h2, .blog-img p {
+    margin: 20px;
+}
 
 a.tag {
     padding: 7px 10px 5px;
     font-size: 16px;
     display: inline-block;
-    height: 22px;
     line-height: 22px;
     background-color: #ffc857;
     color: #fff;
 }
 
-.blog-img > a > img {
+.blog-img>a>img {
     margin-bottom: -34px;
     width: 100%;
 }
