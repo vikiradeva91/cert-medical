@@ -1,6 +1,6 @@
 <script>
 	import axios from 'axios';
-	import { api } from '../../../config';
+	import { api } from '/src/config';
 	import { goto } from '$app/navigation';
 
 	//

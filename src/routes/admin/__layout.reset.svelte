@@ -33,11 +33,11 @@
 	.grid {
 		display: grid;
 
-		grid-template-rows: 1fr 1fr 1fr;
+		grid-template-rows: 0.2fr 1fr 1fr;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
-		gap: 1em;
-		height: 100%;
+		/* gap: 0.5em; */
+		height: 100vh;
 	}
 
 	header {
@@ -48,6 +48,7 @@
 		grid-row-end: 2;
 		grid-column-end: 6;
 	}
+
 	aside {
 		background-color: #8dea9f;
 		grid-row-start: 2;
@@ -56,12 +57,15 @@
 		grid-row-end: 4;
 		grid-column-end: 2;
 	}
+
 	main {
 		/* background-color: #59b67d; */
+		background-color: #f0f0f5;
 		grid-row-start: 2;
 		grid-column-start: 2;
 
 		grid-row-end: 4;
 		grid-column-end: 6;
+		padding: 1em;
 	}
 </style>

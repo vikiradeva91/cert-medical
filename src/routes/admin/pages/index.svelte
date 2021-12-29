@@ -1,6 +1,6 @@
 <script context="module">
 	import axios from 'axios';
-	import config from '../../../config';
+	import config from '/src/config';
 
 	export async function load({ page }) {
 		const p = +page.query.get('page') || 1;
@@ -36,34 +36,38 @@
 	};
 </script>
 
-<div>
-	<h3>Pages</h3>
-	<div><a href="/admin/pages/create">Create new page</a></div>
-	<table>
-		<tr>
-			<th>#</th>
-			<th>Name</th>
-			<th>Title</th>
-			<th>Path</th>
-			<th>Created</th>
-			<th>Actions</th>
-		</tr>
-		{#each data.items as item, i}
+<div class="card">
+	<div class="card-header flex align spread">
+		<h3>Pages</h3>
+		<div><a href="/admin/pages/create">Create new page</a></div>
+	</div>
+	<div class="card-body">
+		<table>
 			<tr>
-				<td>{item._id.slice(-7)}</td>
-				<td>{item.name}</td>
-				<td>{item.title}</td>
-				<td>{item.path}</td>
-				<td>{moment(item.createdAt).format('YYYY-MM-DD HH:mm:ss')}</td>
-				<td>
-					<a href="/admin/pages/update/{item._id}">Edit</a>
-					<button on:click={() => handleDelete(item._id)}>Delete</button>
-				</td>
+				<th>#</th>
+				<th>Name</th>
+				<th>Title</th>
+				<th>Path</th>
+				<th>Created</th>
+				<th>Actions</th>
 			</tr>
-		{:else}
-			<p>No items!</p>
-		{/each}
-	</table>
+			{#each data.items as item, i}
+				<tr>
+					<td>{item._id.slice(-7)}</td>
+					<td>{item.name}</td>
+					<td>{item.title}</td>
+					<td>{item.path}</td>
+					<td>{moment(item.createdAt).format('YYYY-MM-DD HH:mm:ss')}</td>
+					<td>
+						<a href="/admin/pages/update/{item._id}">Edit</a>
+						<button on:click={() => handleDelete(item._id)}>Delete</button>
+					</td>
+				</tr>
+			{:else}
+				<p>No items!</p>
+			{/each}
+		</table>
+	</div>
 
 	<PaginationNav currentPage={p} path="pages" total={Math.ceil(data.total / 10)} />
 </div>

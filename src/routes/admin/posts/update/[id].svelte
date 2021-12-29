@@ -1,5 +1,5 @@
 <script context="module">
-	import { api } from '../../../../config';
+	import { api } from '/src/config';
 	export async function load({ page }) {
 		const { id } = page.params;
 

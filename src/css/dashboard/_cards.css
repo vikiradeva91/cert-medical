@@ -1,0 +1,21 @@
+.card {
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    border: inherit !important;
+    background-clip: border-box;
+    border-radius: 7px;
+    box-shadow: 0 4px 25px 0 rgb(168 180 208 / 10%);
+}
+
+.card .card-header {
+    padding: 1.2rem 1.5rem;
+    background-color: transparent;
+    border-bottom: 1px solid #e9edf4;
+    letter-spacing: 0.2px;
+}
+
+.card .card-body {
+    padding: 1.2rem 1.5rem;
+}

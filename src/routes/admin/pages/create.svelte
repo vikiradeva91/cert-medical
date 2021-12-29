@@ -1,6 +1,6 @@
 <script>
 	import axios from 'axios';
-	import { api } from '../../../config';
+	import { api } from '/src/config';
 	import { goto } from '$app/navigation';
 
 	//
@@ -31,18 +31,18 @@
 	</div>
 	<div>
 		<TextField
-			label="Title"
-			name="title"
-			bind:value={input.title}
-			error={errors.title && errors.title.message}
-		/>
-	</div>
-	<div>
-		<TextField
 			label="Slug"
 			name="slug"
 			bind:value={input.slug}
 			error={errors.slug && errors.slug.message}
+		/>
+	</div>
+	<div>
+		<TextField
+			label="Title"
+			name="title"
+			bind:value={input.title}
+			error={errors.title && errors.title.message}
 		/>
 	</div>
 	<div>
@@ -54,6 +54,6 @@
 		/>
 	</div>
 	<div>
-		<button on:click={handleSubmit}>Submit</button>
+		<button on:click={handleSubmit}>Create</button>
 	</div>
 </div>

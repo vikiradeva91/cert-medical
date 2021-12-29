@@ -16,3 +16,6 @@
 @import './css/_form.css';
 @import './css/_404.css';
 @import './css/_terms.css';
+
+/* Dashboard */
+@import './css/dashboard/_cards.css';
