@@ -23,6 +23,8 @@
     "cl-editor": "^2.3.0",
     "cookie": "^0.4.1",
     "faker": "^5.5.3",
+    "froala-editor": "^4.0.8",
+    "jodit": "^3.11.3",
     "moment": "^2.29.1"
   }
 }

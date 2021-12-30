@@ -37,7 +37,7 @@
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
 		/* gap: 0.5em; */
-		height: 100vh;
+		min-height: 100vh;
 	}
 
 	header {

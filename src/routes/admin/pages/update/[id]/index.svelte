@@ -28,7 +28,7 @@
 
 	export let page;
 
-	let block;
+	let created, edited;
 
 	let errors = {};
 
@@ -41,63 +41,109 @@
 			console.log(error.response.data);
 		}
 	};
+
+	const handleBlockUpdate = async () => {
+		console.log(edited);
+		try {
+			const response = await axios.patch(`${api.url}/page/${page._id}`, {
+				$set: { [`blocks.${edited.key}`]: edited }
+			});
+
+			edited = response.data.blocks[edited.key];
+		} catch (error) {
+			console.log(error);
+			errors = error.response.data.errors;
+		}
+	};
 </script>
 
 <div class="form">
+	<TextField
+		label="Name"
+		name="name"
+		value={page.name}
+		error={errors.name && errors.name.message}
+	/>
+	<TextField
+		label="Slug"
+		name="slug"
+		value={page.slug}
+		error={errors.slug && errors.slug.message}
+	/>
+	<TextField
+		label="Title"
+		name="title"
+		value={page.title}
+		error={errors.title && errors.title.message}
+	/>
+	<TextField
+		label="Title"
+		name="title"
+		value={page.title}
+		error={errors.title && errors.title.message}
+	/>
+	<TextField
+		label="Path"
+		name="path"
+		value={page.path}
+		error={errors.path && errors.path.message}
+	/>
 	<div>
-		<TextField
-			label="Name"
-			name="name"
-			value={page.name}
-			error={errors.name && errors.name.message}
-		/>
-	</div>
-	<div>
-		<TextField
-			label="Slug"
-			name="slug"
-			value={page.slug}
-			error={errors.slug && errors.slug.message}
-		/>
-	</div>
-	<div>
-		<TextField
-			label="Title"
-			name="title"
-			value={page.title}
-			error={errors.title && errors.title.message}
-		/>
-	</div>
-	<div>
-		<TextField
-			label="Title"
-			name="title"
-			value={page.title}
-			error={errors.title && errors.title.message}
-		/>
-	</div>
-	<div>
-		<TextField
-			label="Path"
-			name="path"
-			value={page.path}
-			error={errors.path && errors.path.message}
-		/>
+		<button on:click={handleUpdate}>Save</button>
 	</div>
 	<hr />
 	<div class="blocks">
 		<ul>
 			{#each page.blocks as block, i}
 				<li>
-					<a href="/admin/pages/update/{page._id}/blocks/update/{i}">{block.name}</a>
+					<button on:click={() => (edited = { key: i, ...block })}>
+						{block.name}
+					</button>
 				</li>
 			{:else}
 				<h5>No blocks</h5>
 			{/each}
 		</ul>
-		<a href="/admin/pages/update/{page._id}/blocks/create">Add new block</a>
-	</div>
-	<div>
-		<button on:click={handleUpdate}>Save</button>
+		<hr />
+		<div>
+			{#if edited}
+				<TextField
+					label="Name"
+					name="block-name"
+					value={edited.name}
+					error={errors.name && errors.name.message}
+				/>
+				<div>
+					<RichTextareaField
+						label="Body"
+						name="block-nody"
+						value={edited.body}
+						error={errors.body && errors.body.message}
+					/>
+				</div>
+				<div>
+					<button on:click={handleBlockUpdate}>Save</button>
+				</div>
+			{/if}
+		</div>
+		{#if created}
+			<TextField
+				label="Name"
+				name="block-name"
+				value={created.name}
+				error={errors.name && errors.name.message}
+			/>
+			<div>
+				<!-- <RichTextareaField
+					label="Body"
+					name="block-nody"
+					html={created.body}
+					error={errors.body && errors.body.message}
+				/> -->
+			</div>
+			<button on:click={handleUpdate}>Save</button>
+		{:else}
+			<button on:click={() => (created = {})}>Create new block</button>
+		{/if}
 	</div>
 </div>

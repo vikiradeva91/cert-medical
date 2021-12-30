@@ -1,0 +1,21 @@
+.list {
+    margin: 1em 0;
+}
+
+.list>.item {
+    border: 1px solid sandybrown;
+    border-radius: 3px;
+}
+
+.list>.item:not(:first-of-type) {
+    border-top: 0;
+}
+
+.list>.item>.header {
+    display: block;
+    width: 100%;
+    border: 0;
+    text-align: left;
+    background-color: transparent;
+    padding: 1em;
+}
