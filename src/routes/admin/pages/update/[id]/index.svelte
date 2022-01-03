@@ -2,8 +2,8 @@
 	import axios from 'axios';
 	import { api } from '/src/config';
 
-	export async function load({ page }) {
-		const { id } = page.params;
+	export async function load({ params }) {
+		const { id } = params;
 
 		let item = {};
 
@@ -34,6 +34,7 @@
 
 	const handleUpdate = async () => {
 		try {
+			console.log('page', page);
 			const response = await axios.patch(`${api.url}/page/${page._id}`, { $set: page });
 			page = response.data;
 		} catch (error) {
@@ -44,6 +45,7 @@
 
 	const handleBlockUpdate = async () => {
 		console.log(edited);
+		console.log('page', page);
 		try {
 			const response = await axios.patch(`${api.url}/page/${page._id}`, {
 				$set: { [`blocks.${edited.key}`]: edited }
@@ -117,7 +119,7 @@
 					<RichTextareaField
 						label="Body"
 						name="block-nody"
-						value={edited.body}
+						bind:html={edited.body}
 						error={errors.body && errors.body.message}
 					/>
 				</div>
@@ -126,6 +128,7 @@
 				</div>
 			{/if}
 		</div>
+
 		{#if created}
 			<TextField
 				label="Name"
@@ -134,12 +137,12 @@
 				error={errors.name && errors.name.message}
 			/>
 			<div>
-				<!-- <RichTextareaField
+				<RichTextareaField
 					label="Body"
 					name="block-nody"
-					html={created.body}
+					bind:html={created.body}
 					error={errors.body && errors.body.message}
-				/> -->
+				/>
 			</div>
 			<button on:click={handleUpdate}>Save</button>
 		{:else}

@@ -1,7 +1,7 @@
 <script context="module">
 	import { api } from '/src/config';
-	export async function load({ page }) {
-		const { id } = page.params;
+	export async function load({ url, params }) {
+		const { id } = params;
 
 		let post = {};
 

@@ -1,12 +1,7 @@
 <script>
 	import Editor from 'cl-editor/src/Editor.svelte';
 
-	export let name, label, value, error;
-
-	let html, editor;
-
-	$: editor && value && editor.setHtml(value);
-	$: editor && console.log(html);
+	export let name, label, html, error;
 </script>
 
 {#if label}
@@ -15,7 +10,7 @@
 
 <button on:click={() => (html = 'reset')}>TEST</button>
 
-<Editor {value} on:change={(e) => (html = e.detail)} bind:this={editor} />
+<Editor {html} on:change={(e) => (html = e.detail)} />
 
 {#if error}
 	<div class="field-error">

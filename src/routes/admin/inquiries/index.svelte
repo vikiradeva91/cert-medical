@@ -2,11 +2,11 @@
 	import axios from 'axios';
 	import config from '/src/config';
 
-	export async function load({ page }) {
-		const p = +page.query.get('page') || 1;
+	export async function load({ url, params }) {
+		const page = +params.page || 1;
 
-		const $limit = p * 10;
-		const $skip = (p - 1) * 10;
+		const $limit = page * 10;
+		const $skip = (page - 1) * 10;
 
 		let data = [];
 
@@ -18,7 +18,7 @@
 		}
 
 		return {
-			props: { data, p }
+			props: { data, page }
 		};
 	}
 </script>
@@ -27,7 +27,7 @@
 	import moment from 'moment';
 	import PaginationNav from '$lib/components/admin/list/PaginationNav.svelte';
 
-	export let data, p;
+	export let data, page;
 
 	const handleDelete = (id) => {
 		console.log('delete', id);
@@ -62,5 +62,5 @@
 		</table>
 	</div>
 
-	<PaginationNav currentPage={p} path="inquiries" total={Math.ceil(data.total / 10)} />
+	<PaginationNav currentPage={page} path="inquiries" total={Math.ceil(data.total / 10)} />
 </div>

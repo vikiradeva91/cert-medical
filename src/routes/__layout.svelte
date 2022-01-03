@@ -1,8 +1,8 @@
 <script context="module">
-	export async function load({ page }) {
-        console.log("page", page);
+	export async function load({ url, params }) {
+		console.log('url, params', url, params);
 
-        return {};
+		return {};
 	}
 </script>
 
