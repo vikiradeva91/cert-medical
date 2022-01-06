@@ -1,7 +1,5 @@
 <script context="module">
 	export async function load({ url, params }) {
-		console.log('url, params', url, params);
-
 		return {};
 	}
 </script>
