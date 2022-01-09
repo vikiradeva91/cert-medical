@@ -12,7 +12,10 @@
 		let data = [];
 
 		try {
-			const response = await axios.post(`${config.api.url}/query/page`, { $limit, $skip });
+			const response = await axios.post(`${config.api.url}/dashboard/query/page`, {
+				$limit,
+				$skip
+			});
 			data = response.data;
 
 			console.log('data', data);
