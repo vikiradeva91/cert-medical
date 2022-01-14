@@ -1,9 +1,7 @@
 <script context="module">
-	import axios from 'axios';
-	import config from '/src/config';
+	import { dashboard } from '$lib/api';
 
-	export async function load({ url, params }) {
-		console.log(params);
+	export async function load({ params }) {
 		const page = +params.page || 1;
 
 		const $limit = page * 10;
@@ -12,15 +10,16 @@
 		let data = [];
 
 		try {
-			const response = await axios.post(`${config.api.url}/dashboard/query/page`, {
+			const response = await dashboard.post('query/page', {
 				$limit,
 				$skip
 			});
+
 			data = response.data;
 
 			console.log('data', data);
 		} catch (error) {
-			console.log(error);
+			console.log('error', error);
 		}
 
 		return {
