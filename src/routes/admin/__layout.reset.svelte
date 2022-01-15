@@ -1,3 +1,7 @@
+<script>
+	import '../../admin.css';
+</script>
+
 <div class="grid">
 	<header>
 		<h2>Header</h2>

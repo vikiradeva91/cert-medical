@@ -8,7 +8,6 @@
 @import './css/_fluid.css';
 @import './css/_hb-menu.css';
 @import './css/_index.css';
-@import './css/_tables.css';
 @import './css/_footer.css';
 @import './css/_about.css';
 @import './css/_blog.css';
@@ -16,7 +15,3 @@
 @import './css/_form.css';
 @import './css/_404.css';
 @import './css/_terms.css';
-
-/* Dashboard */
-@import './css/dashboard/_cards.css';
-@import './css/dashboard/_lists.css';

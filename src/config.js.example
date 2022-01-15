@@ -1,17 +1,16 @@
 export const app = {
     name: "Cert Medical",
     environment: "developement",
-    url: "http://localhost:3000",
-    debug: true,
-    domain: "localhost:3000"
+    host: "http://localhost:3000",
+    debug: true
 }
 
 export const api = {
-    url: "http://localhost:3001"
+    host: "http://cert-medical.local/api"
 }
 
 export const dashboard = {
-    url: "http://localhost:3002"
+    url: "http://cert-medical.local/admin"
 }
 
 export default { app, api, dashboard };
