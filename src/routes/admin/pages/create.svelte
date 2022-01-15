@@ -1,7 +1,6 @@
 <script>
-	import axios from 'axios';
-	import { api } from '/src/config';
 	import { goto } from '$app/navigation';
+	import { dashboard } from '$lib/api';
 
 	//
 	import TextField from '$lib/components/admin/fields/TextField.svelte';
@@ -11,7 +10,7 @@
 
 	const handleSubmit = async () => {
 		try {
-			const response = await axios.post(`${api.url}/page`, input);
+			const response = await dashboard.post('/page', input);
 			goto(`/admin/pages/update/${response.data._id}`);
 		} catch (error) {
 			errors = error.response.data.errors;

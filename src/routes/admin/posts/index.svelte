@@ -1,7 +1,5 @@
 <script context="module">
-	// import axios from 'axios';
-	import { backend } from '$lib/api';
-	// import config from '/src/config';
+	import { dashboard } from '$lib/api';
 
 	export async function load({ params }) {
 		const page = +params.page || 1;
@@ -12,7 +10,7 @@
 		let data = [];
 
 		try {
-			const response = await backend.auth.post('/query/post', { $limit, $skip });
+			const response = await dashboard.post('/query/post', { $limit, $skip });
 			data = response.data;
 		} catch (error) {
 			console.log(error);

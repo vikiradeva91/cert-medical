@@ -1,12 +1,11 @@
 <script context="module">
-	import { api } from '/src/config';
 	export async function load({ url, params }) {
 		const { id } = params;
 
 		let post = {};
 
 		try {
-			const response = await axios.get(`${api.url}/post/${id}`);
+			const response = await dashboard.get(`/post/${id}`);
 			post = response.data;
 		} catch (error) {
 			console.log(error);
@@ -19,11 +18,9 @@
 </script>
 
 <script>
-	import axios from 'axios';
-
-	//
 	import TextField from '$lib/components/admin/fields/TextField.svelte';
 	import RichTextareaField from '$lib/components/admin/fields/RichTextareaField.svelte';
+	import { dashboard } from '$lib/api';
 
 	export let post;
 
@@ -31,7 +28,7 @@
 
 	const handleUpdate = async () => {
 		try {
-			const response = await axios.patch(`${api.url}/post/${post._id}`, { $set: post });
+			const response = await dashboard.patch(`/post/${post._id}`, { $set: post });
 			post = response.data;
 		} catch (error) {
 			errors = error.response.data.errors;

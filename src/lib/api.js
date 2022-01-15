@@ -1,12 +1,12 @@
 import axios from "axios";
-import { app } from "../config";
+import config from "../config";
 
 export let api = axios.create({
-    baseURL: `${app.host}/api`
+    baseURL: `${config.api.host}`
 })
 
 export let dashboard = axios.create({
-    baseURL: `${app.host}/api/dashboard`
+    baseURL: `${config.api.host}/dashboard`
 });
 
 // const token = (process.browser) ? getCookie('token') : '';

@@ -1,6 +1,5 @@
 <script context="module">
-	import axios from 'axios';
-	import { api } from '/src/config';
+	import { dashboard } from '$lib/api';
 
 	export async function load({ params }) {
 		const { id } = params;
@@ -8,7 +7,7 @@
 		let item = {};
 
 		try {
-			const response = await axios.get(`${api.url}/page/${id}`);
+			const response = await dashboard.get(`page/${id}`);
 			item = response.data;
 
 			console.log('item', item);
@@ -35,7 +34,7 @@
 	const handleUpdate = async () => {
 		try {
 			console.log('page', page);
-			const response = await axios.patch(`${api.url}/page/${page._id}`, { $set: page });
+			const response = await dashboard.patch(`page/${page._id}`, { $set: page });
 			page = response.data;
 		} catch (error) {
 			errors = error.response.data.errors;
@@ -47,7 +46,7 @@
 		console.log(edited);
 		console.log('page', page);
 		try {
-			const response = await axios.patch(`${api.url}/page/${page._id}`, {
+			const response = await dashboard.patch(`page/${page._id}`, {
 				$set: { [`blocks.${edited.key}`]: edited }
 			});
 
