@@ -5,6 +5,6 @@
 @import './css/_layout.css';
 
 /* Dashboard */
-@import './css/dashboard/_cards.css';
-@import './css/dashboard/_lists.css';
-@import './css/_tables.css';
+@import './css/admin/_cards.css';
+@import './css/admin/_lists.css';
+@import './css/admin/_tables.css';
