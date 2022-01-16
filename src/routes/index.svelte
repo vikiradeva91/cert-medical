@@ -43,7 +43,7 @@
 		</p>
 	</div>
 	<div class="CE-img">
-		<img src="/img/operating-room-surgery.jpg" alt="" />
+		<img src="/img/section_photo_operation.jpg" alt="" />
 	</div>
 </section>
 <div class="calltoaction">
