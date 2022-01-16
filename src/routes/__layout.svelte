@@ -42,8 +42,7 @@
 				<a href="/blog">Blog</a><br />
 				<a href="/contacts">Contacts</a><br />
 				<a href="/terms">Terms & Conditions</a>
-			</div>
-			<div class="c3 p1">
+			</div><div class="c3 p1">
 				<h3>Services</h3>
 				<a href="/">CE Marking process</a><br />
 				<a href="/">Technical File review</a><br />
@@ -51,8 +50,7 @@
 				<a href="/">EC Declaration of Conformity</a><br />
 				<a href="/">User manual and Labelling</a><br />
 				<a href="/">ISO:13485 Implementation</a>
-			</div>
-			<div class="c3 p1">
+			</div><div class="c3 p1">
 				<h3>Contacts</h3>
 				<a href="https://goo.gl/maps/UcmhCLRKwB9hua2c7" target="_blank">
 					Sofia p.k. 1618,<br />

@@ -53,6 +53,7 @@
 
 <h1 class="services-title mrg-top">
 	<i>― Our services ―</i>
+    <h6>CE marking of a medical device</h6>
 </h1>
 
 <section class="services flex">
@@ -82,7 +83,7 @@
 	</div>
 </section>
 
-<h1 class="steps-title mrg-top">
+<!-- <h1 class="steps-title mrg-top">
 	<i>― Obtaining a EC declaration of conformity for your medical device ―</i>
 </h1>
 
@@ -134,4 +135,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->

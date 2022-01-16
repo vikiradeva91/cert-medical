@@ -1,7 +1,7 @@
 
 
 @media all and (max-width: 960px) {
-    /* nav { display: none; } */
+    nav { display: none; }
     .mgE {
         float: right;
         display: block;
@@ -10,10 +10,10 @@
         padding: 15px;
         cursor: pointer;
         position: relative;
-        margin-top: 20px;
+        margin-top: 10px;
     }
 
-    /* header .mgE { margin-left: auto; } */
+    header .mgE { margin-left: auto; }
 
     .mgE hr {
         border: none;

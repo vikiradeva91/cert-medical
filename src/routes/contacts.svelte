@@ -57,9 +57,9 @@
 
 					<div style="display: flex; justify-content: space-between;" class="p1">
 						<div>
-							<label>
+							<label class="checkbox">
 								<input type="checkbox" bind:checked={inputs.terms} />
-								Yes! Send me regular email spam
+								<span></span>	Yes! Send me regular email spam 
 							</label>
 						</div>
 						<!-- <div>
@@ -77,8 +77,7 @@
 					</div>
 				</fieldset>
 			</form>
-		</div>
-		<div class="c3 pdg">
+		</div><div class="c3 pdg">
 			<h2>Cert Medical</h2>
 			<h3>Head Office</h3>
 			<p>
