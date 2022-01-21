@@ -39,6 +39,7 @@
 		<div class="footer-pdg">
 			<div class="c3 p1">
 				<h3>Cert Medical</h3>
+				<a href="/#services">Services</a><br />
 				<a href="/about">About us</a><br />
 				<a href="/blog">Blog</a><br />
 				<a href="/contacts">Contacts</a><br />

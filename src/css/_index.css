@@ -5,9 +5,9 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+/* *, *:before, *:after {
   box-sizing: inherit;
-}
+} */
 
 .homeimg {
   background-image: url(/img/main_photo.jpg), linear-gradient(45deg, #0851789d 10%, #85d0d89e 90%);
@@ -30,6 +30,8 @@ section.row {
   flex-wrap: wrap;
   align-items: flex-start;
 }
+
+.services { padding:0 0 15px 0;}
 
 .services-title { margin: 50px 0;}
 
@@ -162,7 +164,7 @@ section.row .CE-img {
   }
 }
 
-@media all and (min-width: 460px) and (max-width: 959px) {
+@media all and (min-width: 599px) and (max-width: 959px) {
   .services.flex .service {
     width: calc(50% - 20px);
     margin: 10px;
@@ -170,7 +172,16 @@ section.row .CE-img {
   .services.flex .service img { margin: 20px 0 20px 0; }
 }
 
-@media all and (min-width: 960px) {
+
+@media all and (min-width: 960px) and (max-width: 1024px){
+  .services.flex .service {
+    width: calc(25% - 30px);
+    margin: 15px;
+  }
+  .services.flex .service img { margin: -55px 0 20px 0; }
+}
+
+@media all and (min-width: 1025px) {
   .services.flex .service {
     width: calc(25% - 60px);
     margin: 30px;
