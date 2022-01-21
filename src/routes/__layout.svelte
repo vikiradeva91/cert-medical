@@ -19,6 +19,7 @@
 		</div>
 		<div style="clear: both" />
 		<nav class="nav-mobile">
+			<a href="/#services" class="fadein hover">SERVICES</a>
 			<a href="/about" class="fadein hover">ABOUT US</a>
 			<a href="/blog" class="fadein hover">BLOG</a>
 			<a href="/contacts" class="fadein hover">CONTACTS</a>
@@ -44,12 +45,10 @@
 				<a href="/terms">Terms & Conditions</a>
 			</div><div class="c3 p1">
 				<h3>Services</h3>
-				<a href="/">CE Marking process</a><br />
-				<a href="/">Technical File review</a><br />
-				<a href="/">Medical Device testing</a><br />
-				<a href="/">EC Declaration of Conformity</a><br />
-				<a href="/">User manual and Labelling</a><br />
-				<a href="/">ISO:13485 Implementation</a>
+				<a href="/">Quality Management Systems</a><br />
+				<a href="/">Technical File</a><br />
+				<a href="/">Clinical evaluation</a><br />
+				<a href="/">Conformity assessment</a>
 			</div><div class="c3 p1">
 				<h3>Contacts</h3>
 				<a href="https://goo.gl/maps/UcmhCLRKwB9hua2c7" target="_blank">

@@ -15,71 +15,69 @@
 </div>
 
 <h1 class="content-title mrg-top">
-	<i>― Obtaining CE Certification for Medical Devices ―</i>
+	<i>― Trusted partner of medical devices industry ―</i>
 </h1>
 
 <section class="row p2">
 	<div class="CE-content">
 		<p>
-			Have you finished designing, developing, and manufacturing, and is your product ready to enter
-			the market? When trading medical devices on the European market, obtaining the CE-mark is
-			mandatory for every company or entity. With the CE-mark you declare that the medical device is
-			in compliance with all legal requirements of the European market. The Medical Device
-			Regulation (EU) 2017/745 is a set of requirements and processes for you as responsible party.
-			When your medical device is in accordance with this set of requirements, the CE-mark can be
-			affixed and the medical device can be legally introduced to the European market.
+			European regulations delay medical devices market placement as there are strict safety and performance requirements.
 		</p>
-		<h3 style="font-weight: bold">MEETING THE EU MEDICAL DEVICE REGULATIONS</h3>
+	<br/>
 		<p>
-			As responsible entity you have to ensure that your medical device and its documentation meet
-			the EU medical device directive. Where do you start? Every case is different and has its own
-			unique characteristics. We have years of experience in medical product certification in the EU
-			and internationally, and offer swift and tailored certification of your medical device. Our
-			consultants have complete knowledge of the EU’s medical device classification standards, so if
-			you are unsure whether your product is classified as a medical device in Europe, we can
-			confirm for you. With our certification process, we guarantee your medical device and
-			documentation will meet all mandatory provisions. All we need is specific information of the
-			medical device and we will arrange the rest.
+			Medical devices manufacturers may affix the CE marking (Conformité Européenne) only to products with proven compliance with REGULATION (EU) 2017/745.
+		</p>
+	<br/>
+		<p>
+			To be able to affix the CE mark, manufacturers must successfully pass Quality management system and technical documentation assessment by a Notified Body (NB). For Class I products, a simplified procedure applies - without the intervention of a notified body.
 		</p>
 	</div>
 	<div class="CE-img">
 		<img src="/img/section_photo_operation.jpg" alt="" />
 	</div>
 </section>
+
+
 <div class="calltoaction">
 	<h2>Set the date for your market access</h2>
-	<a class="submit" href="/">Get started</a>
+	<a class="submit" href="/contacts">Get started</a>
 </div>
 
-<h1 class="services-title mrg-top">
+
+<div class="anchor"> <div id="services"></div> </div>
+<h1 class="services-title ">
 	<i>― Our services ―</i>
-    <h6>CE marking of a medical device</h6>
 </h1>
 
 <section class="services flex">
 	<div class="service animated animatedFadeInUp fadeInUp">
-		<img src="/svg/ce.svg" alt="" />
-		<h4>CE Marking process</h4>
-	</div>
-	<div class="service animated animatedFadeInUp fadeInUp">
-		<img src="/svg/glass.svg" alt="" />
-		<h4>Technical File review</h4>
-	</div>
-	<div class="service animated animatedFadeInUp fadeInUp">
-		<img src="/svg/Flask.svg" alt="" />
-		<h4>Medical Device testing</h4>
-	</div>
-	<div class="service animated animatedFadeInUp fadeInUp">
-		<img src="/svg/report.svg" alt="" />
-		<h4>EC Declaration of Conformity</h4>
+		<img src="/svg/iso.svg" alt="" />
+		<div class="services-text">
+			<h4>QUALITY MANAGEMENT SYSTEMS</h4>
+			<p>Development and implementation of ISO 13485 - Quality Management Systems for medical devices manufacturers</p>
+		</div>
+		
 	</div>
 	<div class="service animated animatedFadeInUp fadeInUp">
 		<img src="/svg/archive.svg" alt="" />
-		<h4>User manual and Labelling</h4>
+		<div class="services-text">
+			<h4>TECHNICAL FILES</h4>
+			<p>Technical documentation preparation, review and compliance assessment, according to REGULATION (EU) 2017/745</p>
+		</div>
 	</div>
 	<div class="service animated animatedFadeInUp fadeInUp">
-		<img src="/svg/implement.svg" alt="" />
-		<h4>ISO:13485 Implementation</h4>
+		<img src="/svg/Flask.svg" alt="" />
+		<div class="services-text">
+			<h4>CLINICAL EVALUATION</h4>
+			<p>Clinical evaluation process management, incl. communication and negotiation with contract research organizations (CRO) and accredited testing laboratories</p>
+	    </div>
+	</div>
+	<div class="service animated animatedFadeInUp fadeInUp">
+		<img src="/svg/badge.svg" alt="" />
+		<div class="services-text">
+			<h4>CONFORMITY ASSESSMENT</h4>
+			<p>Organization and management of the overall conformity assessment process, incl. communication and negotiation with Notified Bodies (NB) and certification audit support</p>
+		</div>
 	</div>
 </section>
 
