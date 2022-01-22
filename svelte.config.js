@@ -1,7 +1,7 @@
 import adapter from '@sveltejs/adapter-node';
+import path from 'path'
 
 /** @type {import('@sveltejs/kit').Config} */
-import path from 'path'
 const config = {
 	kit: {
 		adapter: adapter(),

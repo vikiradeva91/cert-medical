@@ -1,13 +1,15 @@
 <script context="module">
-	import { dashboard } from '$lib/api';
+	import { getAuthClient } from '$lib/api';
 
 	export async function load({ params }) {
 		const { id } = params;
 
 		let item = {};
 
+		const client = getAuthClient();
+
 		try {
-			const response = await dashboard.get(`page/${id}`);
+			const response = await client.get(`page/${id}`);
 			item = response.data;
 
 			console.log('item', item);
@@ -34,7 +36,7 @@
 	const handleUpdate = async () => {
 		try {
 			console.log('page', page);
-			const response = await dashboard.patch(`page/${page._id}`, { $set: page });
+			const response = await client.patch(`page/${page._id}`, { $set: page });
 			page = response.data;
 		} catch (error) {
 			errors = error.response.data.errors;
@@ -46,7 +48,7 @@
 		console.log(edited);
 		console.log('page', page);
 		try {
-			const response = await dashboard.patch(`page/${page._id}`, {
+			const response = await client.patch(`page/${page._id}`, {
 				$set: { [`blocks.${edited.key}`]: edited }
 			});
 

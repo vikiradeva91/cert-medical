@@ -1,11 +1,11 @@
 <script>
-	import { api } from '$lib/api';
+	import { client } from '$lib/api';
 
 	let inputs = {};
 
 	const handleSubmit = async () => {
 		try {
-			const response = await api.post('inquiry', inputs);
+			const response = await client.post('inquiry', inputs);
 		} catch (error) {
 			console.log(error);
 		}
@@ -59,7 +59,7 @@
 						<div>
 							<label class="checkbox">
 								<input type="checkbox" bind:checked={inputs.terms} />
-								<span></span>	Yes! Send me regular email spam 
+								<span /> Yes! Send me regular email spam
 							</label>
 						</div>
 						<!-- <div>
@@ -77,7 +77,8 @@
 					</div>
 				</fieldset>
 			</form>
-		</div><div class="c3 pdg">
+		</div>
+		<div class="c3 pdg">
 			<h2>Cert Medical</h2>
 			<h3>Head Office</h3>
 			<p>

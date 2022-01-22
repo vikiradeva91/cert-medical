@@ -1,5 +1,5 @@
 <script context="module">
-	import { dashboard } from '$lib/api';
+	import { getAuthClient } from '$lib/api';
 
 	export async function load({ params }) {
 		const page = +params.page || 1;
@@ -9,8 +9,10 @@
 
 		let data = [];
 
+		const client = getAuthClient();
+
 		try {
-			const response = await dashboard.post('/query/post', { $limit, $skip });
+			const response = await client.post('/query/post', { $limit, $skip });
 			data = response.data;
 		} catch (error) {
 			console.log(error);

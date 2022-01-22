@@ -1,3 +1,20 @@
+<script context="module">
+	export async function load({ session }) {
+		console.log({ session });
+		const { user: auth } = session;
+		if (auth && auth.role === 'administrator') {
+			return {
+				props: { auth }
+			};
+		}
+
+		return {
+			status: 301,
+			redirect: '/sign-in'
+		};
+	}
+</script>
+
 <script>
 	import '../../admin.css';
 </script>
@@ -25,6 +42,9 @@
 			</li>
 			<li>
 				<a href="/">Settings</a>
+			</li>
+			<li>
+				<a href="/">Logout</a>
 			</li>
 		</ul>
 	</aside>
