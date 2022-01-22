@@ -44,7 +44,7 @@
 </div>
 
 
-<div class="anchor"> <div id="services"></div> </div>
+<!-- <div class="anchor"> <div id="services"></div> </div> -->
 <h1 class="services-title ">
 	<i>― Our services ―</i>
 </h1>

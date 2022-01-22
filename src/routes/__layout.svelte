@@ -19,7 +19,7 @@
 		</div>
 		<div style="clear: both" />
 		<nav class="nav-mobile">
-			<a href="/#services" class="fadein hover">SERVICES</a>
+			<a href="/services" class="fadein hover">SERVICES</a>
 			<a href="/about" class="fadein hover">ABOUT US</a>
 			<a href="/blog" class="fadein hover">BLOG</a>
 			<a href="/contacts" class="fadein hover">CONTACTS</a>
@@ -39,7 +39,7 @@
 		<div class="footer-pdg">
 			<div class="c3 p1">
 				<h3>Cert Medical</h3>
-				<a href="/#services">Services</a><br />
+				<a href="/services">Services</a><br />
 				<a href="/about">About us</a><br />
 				<a href="/blog">Blog</a><br />
 				<a href="/contacts">Contacts</a><br />
