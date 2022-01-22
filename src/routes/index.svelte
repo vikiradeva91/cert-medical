@@ -1,10 +1,8 @@
 <script context="module">
 	import { client } from '$lib/api';
-	import config from '../config';
 
 	export async function load() {
 		let page = {};
-		console.log(config);
 
 		try {
 			const response = await client.post('query/page/', {
