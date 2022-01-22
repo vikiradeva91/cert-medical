@@ -1,10 +1,12 @@
 import { get } from 'svelte/store';
 import { getStores } from "$app/stores";
 import axios from "axios";
-import config from "../config";
+import { app, api } from "../config";
+
+let url = app.environment === "developement" ? api.host : `${app.host}/api`;
 
 export const client = axios.create({
-    baseURL: `${config.api.host}`
+    baseURL: url
 })
 
 // This should be called on component initialization, otherwise the session is won't be available
@@ -13,10 +15,8 @@ export const getAuthClient = () => {
 
     const { token } = get(session);
 
-    console.log(config.api.host);
-
     return axios.create({
-        baseURL: `${config.api.host}/dashboard`,
+        baseURL: `${url}/dashboard`,
         headers: {
             authorization: `Bearer ${token}`
         }
@@ -25,7 +25,7 @@ export const getAuthClient = () => {
 
 export const preloadClient = (token) => {
     return axios.create({
-        baseURL: `${config.api.host}/dashboard`,
+        baseURL: `${url}/dashboard`,
         headers: {
             authorization: `Bearer ${token}`
         }
