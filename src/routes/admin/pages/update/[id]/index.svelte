@@ -9,8 +9,6 @@
 		try {
 			const response = await preloadClient(session.token).get(`page/${id}`);
 			item = response.data;
-
-			console.log('item', item);
 		} catch (error) {
 			console.log(error);
 		}

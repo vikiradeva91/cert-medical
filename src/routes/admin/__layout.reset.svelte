@@ -1,7 +1,5 @@
 <script context="module">
 	export async function load({ session }) {
-		console.log({ session });
-
 		const { user: auth } = session;
 
 		if (auth && auth.role === 'administrator') {

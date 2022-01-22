@@ -1,7 +1,5 @@
 <script context="module">
 	export async function load({ url, session }) {
-		console.log({ session });
-
 		const { user: auth } = session;
 
 		if (auth && url.pathname === '/sign-in') {

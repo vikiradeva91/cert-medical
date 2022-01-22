@@ -10,8 +10,6 @@
 			});
 
 			page = response.data.items[0];
-
-			console.log(page);
 		} catch (error) {
 			console.log(error);
 			return {};

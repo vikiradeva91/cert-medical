@@ -13,6 +13,8 @@ export const getAuthClient = () => {
 
     const { token } = get(session);
 
+    console.log(config.api.host);
+
     return axios.create({
         baseURL: `${config.api.host}/dashboard`,
         headers: {
