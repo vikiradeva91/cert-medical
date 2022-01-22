@@ -27,6 +27,10 @@
 	export let page;
 </script>
 
+<svelte:head>
+	<title>{page.title}</title>
+</svelte:head>
+
 <div class="about-title ">
 	<h1 class="content-title" style="color: #fff;">About us</h1>
 </div>
