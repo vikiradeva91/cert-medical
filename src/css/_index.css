@@ -5,9 +5,9 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+/* *, *:before, *:after {
   box-sizing: inherit;
-}
+} */
 
 .homeimg {
   background-image: url(/img/main_photo.jpg), linear-gradient(45deg, #0851789d 10%, #85d0d89e 90%);
@@ -30,6 +30,10 @@ section.row {
   flex-wrap: wrap;
   align-items: flex-start;
 }
+
+.services { padding:0 0 15px 0;}
+
+.services-title { margin: 50px 0;}
 
 .services-title,
 .steps-title {
@@ -79,7 +83,7 @@ section.row .CE-img {
 }
 
 .services.flex .service {
-  color: #fff;
+  /* color: #fff; */
   text-align: center;
   box-shadow: 0 3px 12px rgba(95, 92, 120, 0.12);
 }
@@ -91,10 +95,10 @@ section.row .CE-img {
 
 .services.flex .service img {
   border: 1px solid #eee;
-  padding: 20px;
+  padding: 15px;
   border-radius: 50%;
-  width: 54px;
-  margin: 10px 0 20px 0;
+  width: 50px;
+  background-color: #fff;
 }
 
 .services.flex .service:hover h4 {
@@ -103,6 +107,14 @@ section.row .CE-img {
 
 .services.flex .service:hover img {
   border: 1px solid #ffc857;
+}
+
+.services-text {
+  padding: 20px;
+}
+
+.services-text h4 {
+  margin-bottom: 20px;
 }
 
 .grid-item b {
@@ -152,25 +164,29 @@ section.row .CE-img {
   }
 }
 
-@media all and (min-width: 460px) and (max-width: 767px) {
+@media all and (min-width: 599px) and (max-width: 959px) {
   .services.flex .service {
     width: calc(50% - 20px);
     margin: 10px;
   }
+  .services.flex .service img { margin: 20px 0 20px 0; }
 }
 
-@media all and (min-width: 767px) and (max-width: 959px) {
+
+@media all and (min-width: 960px) and (max-width: 1024px){
   .services.flex .service {
-    width: calc(33.333333333% - 20px);
-    margin: 10px;
+    width: calc(25% - 30px);
+    margin: 15px;
   }
+  .services.flex .service img { margin: -55px 0 20px 0; }
 }
 
-@media all and (min-width: 960px) {
+@media all and (min-width: 1025px) {
   .services.flex .service {
-    width: calc(33.333333% - 80px);
-    margin: 40px;
+    width: calc(25% - 60px);
+    margin: 30px;
   }
+  .services.flex .service img { margin: -55px 0 20px 0; }
 }
 
 
@@ -194,9 +210,8 @@ main .homeimg {
 
   /* .steps { margin: 20px;} */
 
-  .services {
-    padding: 0 10px;
-  }
+  .services { padding: 20px 10px;  }
+  .services-title { margin: 25px 0 0 0;}
 
   .content-title,
   .services-title,
