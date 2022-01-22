@@ -1,7 +1,9 @@
 <script context="module">
 	export async function load({ session }) {
 		console.log({ session });
+
 		const { user: auth } = session;
+
 		if (auth && auth.role === 'administrator') {
 			return {
 				props: { auth }
@@ -17,14 +19,22 @@
 
 <script>
 	import '../../admin.css';
+	import { user } from '../../store';
+
+	export let auth;
+
+	$user = auth;
 </script>
 
 <div class="grid">
 	<header>
-		<h2>Header</h2>
+		<a class="logo" href="/admin"><img src="/img/cert_medical_logo.png" alt="" /></a>
 	</header>
 	<aside>
 		<ul>
+			<li>
+				<a href="/">Homepage</a>
+			</li>
 			<li>
 				<a href="/admin">Dashboard</a>
 			</li>
@@ -65,7 +75,7 @@
 	}
 
 	header {
-		background-color: #56ab75;
+		background-color: #f0f0f5;
 		grid-row-start: 1;
 		grid-column-start: 1;
 

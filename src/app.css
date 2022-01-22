@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
 @import url('https://fonts.googleapis.com/css?family=Catamaran:400,800');
 
+@import './css/_reset.css';
 @import './css/_layout.css';
 @import './css/_content.css';
 @import './css/_header.css';

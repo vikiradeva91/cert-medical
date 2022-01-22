@@ -8,6 +8,8 @@
 	let input = {};
 	let errors = {};
 
+	const client = getAuthClient();
+
 	const handleSubmit = async () => {
 		try {
 			const response = await client.post('/page', input);

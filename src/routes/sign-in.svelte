@@ -1,19 +1,3 @@
-<script context="module">
-	export async function load() {
-		// try {
-		// 	const response = await api.post('/auth');
-		// 	data = response.data;
-		// } catch (error) {
-		// 	console.log(error);
-		// }
-
-		// return {
-		// 	props: { data, page }
-		// };
-		return {};
-	}
-</script>
-
 <script>
 	import { client } from '$lib/api';
 	import PasswordField from '../lib/components/admin/fields/PasswordField.svelte';
@@ -33,7 +17,7 @@
 				daysToExpire: 1
 			});
 
-			console.log(response);
+			window.location.href = '/';
 		} catch (err) {
 			errors = err.response.data;
 			console.log(err);

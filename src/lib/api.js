@@ -20,3 +20,12 @@ export const getAuthClient = () => {
         }
     });
 }
+
+export const preloadClient = (token) => {
+    return axios.create({
+        baseURL: `${config.api.host}/dashboard`,
+        headers: {
+            authorization: `Bearer ${token}`
+        }
+    });
+}

@@ -9,11 +9,14 @@
 	let input = {};
 	let errors = {};
 
+	const client = getAuthClient();
+
 	const handleSubmit = async () => {
 		try {
 			const response = await client.post('/post', input);
 			goto(`/admin/posts/update/${response.data._id}`);
 		} catch (error) {
+			console.log('error', error);
 			errors = error.response.data.errors;
 			console.log(error.response.data);
 		}

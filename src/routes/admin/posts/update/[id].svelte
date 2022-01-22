@@ -1,14 +1,12 @@
 <script context="module">
-	import { getAuthClient } from '$lib/api';
-	export async function load({ url, params }) {
+	import { preloadClient, getAuthClient } from '$lib/api';
+	export async function load({ url, params, session }) {
 		const { id } = params;
 
 		let post = {};
 
-		const client = getAuthClient();
-
 		try {
-			const response = await client.get(`/post/${id}`);
+			const response = await preloadClient(session.token).get(`/post/${id}`);
 			post = response.data;
 		} catch (error) {
 			console.log(error);
@@ -46,7 +44,7 @@
 		<TextField
 			label="Title"
 			name="title"
-			value={post.title}
+			bind:value={post.title}
 			error={errors.title && errors.title.message}
 		/>
 	</div>
@@ -54,7 +52,7 @@
 		<TextField
 			label="Slug"
 			name="slug"
-			value={post.slug}
+			bind:value={post.slug}
 			error={errors.slug && errors.slug.message}
 		/>
 	</div>
