@@ -1,11 +1,32 @@
 <script context="module">
-	export async function load({ url, params }) {
-		return {};
+	export async function load({ url, session }) {
+		const { user: auth } = session;
+
+		if (auth && url.pathname === '/sign-in') {
+			return {
+				status: 302,
+				redirect: '/'
+			};
+		}
+
+		return {
+			props: { auth: session.user }
+		};
 	}
 </script>
 
 <script>
 	import '../app.css';
+	import { removeCookie } from '$lib/cookies';
+	import { user } from '../store';
+	export let auth;
+
+	$user = auth;
+
+	const handleLogout = () => {
+		removeCookie('token');
+		window.location.reload();
+	};
 </script>
 
 <header>
@@ -23,6 +44,12 @@
 			<a href="/about" class="fadein hover">ABOUT US</a>
 			<a href="/blog" class="fadein hover">BLOG</a>
 			<a href="/contacts" class="fadein hover">CONTACTS</a>
+			{#if auth && auth.role === 'administrator'}
+				<a href="/admin" class="fadein hover">Admin</a>
+			{/if}
+			{#if auth}
+				<a href="/" class="fadein hover" on:click|preventDefault={handleLogout}>Logout</a>
+			{/if}
 			<!-- <div class="social">
 				<a class="fb" href="/" target="_blank"><span></span></a>
 			</div> -->
@@ -44,13 +71,15 @@
 				<a href="/blog">Blog</a><br />
 				<a href="/contacts">Contacts</a><br />
 				<a href="/terms">Terms & Conditions</a>
-			</div><div class="c3 p1">
+			</div>
+			<div class="c3 p1">
 				<h3>Services</h3>
 				<a href="/">Quality Management Systems</a><br />
 				<a href="/">Technical File</a><br />
 				<a href="/">Clinical evaluation</a><br />
 				<a href="/">Conformity assessment</a>
-			</div><div class="c3 p1">
+			</div>
+			<div class="c3 p1">
 				<h3>Contacts</h3>
 				<a href="https://goo.gl/maps/UcmhCLRKwB9hua2c7" target="_blank">
 					Sofia p.k. 1618,<br />

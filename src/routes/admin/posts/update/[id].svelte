@@ -1,11 +1,12 @@
 <script context="module">
-	export async function load({ url, params }) {
+	import { preloadClient, getAuthClient } from '$lib/api';
+	export async function load({ url, params, session }) {
 		const { id } = params;
 
 		let post = {};
 
 		try {
-			const response = await dashboard.get(`/post/${id}`);
+			const response = await preloadClient(session.token).get(`/post/${id}`);
 			post = response.data;
 		} catch (error) {
 			console.log(error);
@@ -20,15 +21,16 @@
 <script>
 	import TextField from '$lib/components/admin/fields/TextField.svelte';
 	import RichTextareaField from '$lib/components/admin/fields/RichTextareaField.svelte';
-	import { dashboard } from '$lib/api';
 
 	export let post;
 
 	let errors = {};
 
+	const client = getAuthClient();
+
 	const handleUpdate = async () => {
 		try {
-			const response = await dashboard.patch(`/post/${post._id}`, { $set: post });
+			const response = await client.patch(`/post/${post._id}`, { $set: post });
 			post = response.data;
 		} catch (error) {
 			errors = error.response.data.errors;
@@ -42,7 +44,7 @@
 		<TextField
 			label="Title"
 			name="title"
-			value={post.title}
+			bind:value={post.title}
 			error={errors.title && errors.title.message}
 		/>
 	</div>
@@ -50,7 +52,7 @@
 		<TextField
 			label="Slug"
 			name="slug"
-			value={post.slug}
+			bind:value={post.slug}
 			error={errors.slug && errors.slug.message}
 		/>
 	</div>

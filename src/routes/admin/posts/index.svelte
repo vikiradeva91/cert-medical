@@ -1,7 +1,7 @@
 <script context="module">
-	import { dashboard } from '$lib/api';
+	import { preloadClient } from '$lib/api';
 
-	export async function load({ params }) {
+	export async function load({ params, session }) {
 		const page = +params.page || 1;
 
 		const $limit = page * 10;
@@ -10,7 +10,10 @@
 		let data = [];
 
 		try {
-			const response = await dashboard.post('/query/post', { $limit, $skip });
+			const response = await preloadClient(session.token).post('/query/post', {
+				$limit,
+				$skip
+			});
 			data = response.data;
 		} catch (error) {
 			console.log(error);

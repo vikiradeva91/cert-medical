@@ -1,30 +1,29 @@
-// import cookie from 'cookie';
+import cookie from 'cookie';
+import jwt from "jsonwebtoken";
 
-// export const handle = async ({ request, resolve }) => {
-// 	// const cookies = cookie.parse(request.headers.cookie || '');
-// 	// request.locals.userid = cookies.userid || uuid();
+export async function handle({ event, resolve }) {
+    const cookies = cookie.parse(event.request.headers.get("cookie") || '');
 
-//     console.log("request", request);
+    if (!cookies.token) {
+        return resolve(event);
+    }
 
-// 	// TODO https://github.com/sveltejs/kit/issues/1046
-// 	// if (request.query.has('_method')) {
-// 	// 	request.method = request.query.get('_method').toUpperCase();
-// 	// }
+    try {
+        const decoded = jwt.decode(cookies.token);
 
-// 	const response = await resolve(request);
+        event.locals.token = cookies.token;
+        event.locals.user = decoded;
 
-// 	// if (!cookies.userid) {
-// 	// 	// if this is the first time the user has visited this app,
-// 	// 	// set a cookie so that we recognise them when they return
-// 	// 	response.headers['set-cookie'] = cookie.serialize('userid', request.locals.userid, {
-// 	// 		path: '/',
-// 	// 		httpOnly: true
-// 	// 	});
-// 	// }
+        return resolve(event);
+    } catch (err) {
+        console.log("hooks - jwt error", err);
+        return resolve(event);
+    }
 
-// 	return response;
-// };
+}
 
-// export const getSession = (request) => {
-//     console.log("session request", request);
-// }
+export function getSession(request) {
+    const { token, user } = request.locals;
+
+    return { token, user };
+}

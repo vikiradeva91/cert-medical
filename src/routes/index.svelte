@@ -1,13 +1,32 @@
 <script context="module">
-	export const prerender = true;
+	import { client } from '$lib/api';
+
+	export async function load() {
+		let page = {};
+
+		try {
+			const response = await client.post('query/page/', {
+				$match: { path: '/' }
+			});
+
+			page = response.data.items[0];
+		} catch (error) {
+			console.log(error);
+			return {};
+		}
+
+		return {
+			props: { page }
+		};
+	}
 </script>
 
 <script>
-	//
+	export let page;
 </script>
 
 <svelte:head>
-	<title>CE Marking for Medical Devices - Certification Experts</title>
+	<title>{page.title}</title>
 </svelte:head>
 
 <div class="homeimg">
@@ -15,34 +34,22 @@
 </div>
 
 <h1 class="content-title mrg-top">
-	<i>― Trusted partner of medical devices industry ―</i>
+	<i>― {page.blocks[0].name} ―</i>
 </h1>
 
 <section class="row p2">
 	<div class="CE-content">
-		<p>
-			European regulations delay medical devices market placement as there are strict safety and performance requirements.
-		</p>
-	<br/>
-		<p>
-			Medical devices manufacturers may affix the CE marking (Conformité Européenne) only to products with proven compliance with REGULATION (EU) 2017/745.
-		</p>
-	<br/>
-		<p>
-			To be able to affix the CE mark, manufacturers must successfully pass Quality management system and technical documentation assessment by a Notified Body (NB). For Class I products, a simplified procedure applies - without the intervention of a notified body.
-		</p>
+		{@html page.blocks[0].body}
 	</div>
 	<div class="CE-img">
 		<img src="/img/section_photo_operation.jpg" alt="" />
 	</div>
 </section>
 
-
 <div class="calltoaction">
 	<h2>Set the date for your market access</h2>
 	<a class="submit" href="/contacts">Get started</a>
 </div>
-
 
 <!-- <div class="anchor"> <div id="services"></div> </div> -->
 <h1 class="services-title ">
@@ -54,29 +61,41 @@
 		<img src="/svg/iso.svg" alt="" />
 		<div class="services-text">
 			<h4>QUALITY MANAGEMENT SYSTEMS</h4>
-			<p>Development and implementation of ISO 13485 - Quality Management Systems for medical devices manufacturers</p>
+			<p>
+				Development and implementation of ISO 13485 - Quality Management Systems for medical
+				devices manufacturers
+			</p>
 		</div>
-		
 	</div>
 	<div class="service animated animatedFadeInUp fadeInUp">
 		<img src="/svg/archive.svg" alt="" />
 		<div class="services-text">
 			<h4>TECHNICAL FILES</h4>
-			<p>Technical documentation preparation, review and compliance assessment, according to REGULATION (EU) 2017/745</p>
+			<p>
+				Technical documentation preparation, review and compliance assessment, according to
+				REGULATION (EU) 2017/745
+			</p>
 		</div>
 	</div>
 	<div class="service animated animatedFadeInUp fadeInUp">
 		<img src="/svg/Flask.svg" alt="" />
 		<div class="services-text">
 			<h4>CLINICAL EVALUATION</h4>
-			<p>Clinical evaluation process management, incl. communication and negotiation with contract research organizations (CRO) and accredited testing laboratories</p>
-	    </div>
+			<p>
+				Clinical evaluation process management, incl. communication and negotiation with
+				contract research organizations (CRO) and accredited testing laboratories
+			</p>
+		</div>
 	</div>
 	<div class="service animated animatedFadeInUp fadeInUp">
 		<img src="/svg/badge.svg" alt="" />
 		<div class="services-text">
 			<h4>CONFORMITY ASSESSMENT</h4>
-			<p>Organization and management of the overall conformity assessment process, incl. communication and negotiation with Notified Bodies (NB) and certification audit support</p>
+			<p>
+				Organization and management of the overall conformity assessment process, incl.
+				communication and negotiation with Notified Bodies (NB) and certification audit
+				support
+			</p>
 		</div>
 	</div>
 </section>

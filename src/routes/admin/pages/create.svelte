@@ -1,6 +1,6 @@
 <script>
 	import { goto } from '$app/navigation';
-	import { dashboard } from '$lib/api';
+	import { getAuthClient } from '$lib/api';
 
 	//
 	import TextField from '$lib/components/admin/fields/TextField.svelte';
@@ -8,9 +8,11 @@
 	let input = {};
 	let errors = {};
 
+	const client = getAuthClient();
+
 	const handleSubmit = async () => {
 		try {
-			const response = await dashboard.post('/page', input);
+			const response = await client.post('/page', input);
 			goto(`/admin/pages/update/${response.data._id}`);
 		} catch (error) {
 			errors = error.response.data.errors;

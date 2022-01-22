@@ -1,10 +1,5 @@
 @import url("./_fields.css");
 
-/* Resets */
-html {
-  box-sizing: border-box;
-}
-
 /* *, *:before, *:after {
   box-sizing: inherit;
 } */
@@ -31,9 +26,13 @@ section.row {
   align-items: flex-start;
 }
 
-.services { padding:0 0 15px 0;}
+.services {
+  padding: 0 0 15px 0;
+}
 
-.services-title { margin: 50px 0;}
+.services-title {
+  margin: 50px 0;
+}
 
 .services-title,
 .steps-title {
@@ -169,16 +168,22 @@ section.row .CE-img {
     width: calc(50% - 20px);
     margin: 10px;
   }
-  .services.flex .service img { margin: 20px 0 20px 0; }
+
+  .services.flex .service img {
+    margin: 20px 0 20px 0;
+  }
 }
 
 
-@media all and (min-width: 960px) and (max-width: 1024px){
+@media all and (min-width: 960px) and (max-width: 1024px) {
   .services.flex .service {
     width: calc(25% - 30px);
     margin: 15px;
   }
-  .services.flex .service img { margin: -55px 0 20px 0; }
+
+  .services.flex .service img {
+    margin: -55px 0 20px 0;
+  }
 }
 
 @media all and (min-width: 1025px) {
@@ -186,7 +191,10 @@ section.row .CE-img {
     width: calc(25% - 60px);
     margin: 30px;
   }
-  .services.flex .service img { margin: -55px 0 20px 0; }
+
+  .services.flex .service img {
+    margin: -55px 0 20px 0;
+  }
 }
 
 
@@ -210,8 +218,13 @@ main .homeimg {
 
   /* .steps { margin: 20px;} */
 
-  .services { padding: 20px 10px;  }
-  .services-title { margin: 25px 0 0 0;}
+  .services {
+    padding: 20px 10px;
+  }
+
+  .services-title {
+    margin: 25px 0 0 0;
+  }
 
   .content-title,
   .services-title,

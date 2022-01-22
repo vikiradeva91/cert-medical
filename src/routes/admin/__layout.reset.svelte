@@ -1,13 +1,38 @@
+<script context="module">
+	export async function load({ session }) {
+		const { user: auth } = session;
+
+		if (auth && auth.role === 'administrator') {
+			return {
+				props: { auth }
+			};
+		}
+
+		return {
+			status: 301,
+			redirect: '/sign-in'
+		};
+	}
+</script>
+
 <script>
 	import '../../admin.css';
+	import { user } from '../../store';
+
+	export let auth;
+
+	$user = auth;
 </script>
 
 <div class="grid">
 	<header>
-		<h2>Header</h2>
+		<a class="logo" href="/admin"><img src="/img/cert_medical_logo.png" alt="" /></a>
 	</header>
 	<aside>
 		<ul>
+			<li>
+				<a href="/">Homepage</a>
+			</li>
 			<li>
 				<a href="/admin">Dashboard</a>
 			</li>
@@ -25,6 +50,9 @@
 			</li>
 			<li>
 				<a href="/">Settings</a>
+			</li>
+			<li>
+				<a href="/">Logout</a>
 			</li>
 		</ul>
 	</aside>
@@ -45,7 +73,7 @@
 	}
 
 	header {
-		background-color: #56ab75;
+		background-color: #f0f0f5;
 		grid-row-start: 1;
 		grid-column-start: 1;
 
