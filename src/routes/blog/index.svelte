@@ -33,13 +33,15 @@
 	<section class="blog flex">
 		{#each posts as post}
 			<div class="blog-img c43 m1">
-				<a href="/">
-					<img src="/img/blog1.jpg" alt="" />
+				<a href={`/blog/${post.slug}`}>
+					<img src="/img/blog1.jpg" alt="" title={post.title} />
 				</a>
-				<a class="tag" href="/">{moment(post.created).format('MMMM DD, YYYY')}</a>
+				<a class="tag" href={`/blog/${post.slug}`}
+					>{moment(post.created).format('MMMM DD, YYYY')}</a
+				>
 				<div>
 					<h2>
-						<a href={`/blog/${post.slug}`}>{post.title}</a>
+						<a href={`/blog/${post.slug}`} title={post.title}>{post.title}</a>
 					</h2>
 					<p>
 						{post.body

@@ -1,6 +1,6 @@
 <script context="module">
 	import { client } from '$lib/api';
-	import moment from 'moment';
+	// import moment from 'moment';
 
 	export async function load({ params }) {
 		let post = {};
@@ -9,8 +9,6 @@
 			const response = await client.post('query/post/', {
 				$match: { slug: params.slug }
 			});
-
-			console.log(response.data.items.length);
 
 			if (response.data.items.length < 1) {
 				throw Error('Post not found');
@@ -41,7 +39,7 @@
 </div>
 
 <h1 class="content-title mrg-top">
-	<i>― Obtaining CE Certification for Medical Devices ―</i>
+	<i>― {post.title} ―</i>
 </h1>
 
 <section class="row p2">
