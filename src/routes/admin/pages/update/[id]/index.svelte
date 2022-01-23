@@ -126,6 +126,17 @@
 					bind:value={page.path}
 					error={errors.path && errors.path.message}
 				/>
+				<SelectField
+					label="Status"
+					name="status"
+					bind:value={page.status}
+					options={{
+						published: 'Published',
+						unpublished: 'Unpublished',
+						draft: 'Draft'
+					}}
+					error={errors.status && errors.status.message}
+				/>
 			</div>
 			<button on:click={handleUpdate}>Save page</button>
 			<hr />

@@ -1,16 +1,20 @@
 <script context="module">
-	import faker from 'faker';
+	import { client } from '$lib/api';
 	import moment from 'moment';
+
 	export async function load() {
-		let posts = new Array(20).fill().map(() => {
-			const title = faker.lorem.sentence();
-			return {
-				title,
-				slug: faker.helpers.slugify(title).toLowerCase(),
-				body: faker.lorem.sentences(20),
-				created: faker.date.past()
-			};
-		});
+		let posts = [];
+
+		try {
+			const response = await client.post('query/post/');
+
+			console.log(response);
+
+			posts = response.data.items;
+		} catch (error) {
+			console.log(error);
+			return {};
+		}
 
 		return {
 			props: { posts }
@@ -38,7 +42,11 @@
 						<a href={`/blog/${post.slug}`}>{post.title}</a>
 					</h2>
 					<p>
-						{post.body.split(' ').splice(0, 20).join(' ') + ' ...'}
+						{post.body
+							.replace(/<[^>]+>/g, '')
+							.split(' ')
+							.splice(0, 20)
+							.join(' ') + ' ...'}
 					</p>
 				</div>
 			</div>

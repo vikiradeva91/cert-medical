@@ -1,8 +1,8 @@
 <script context="module">
 	import { preloadClient } from '$lib/api';
 
-	export async function load({ params, session }) {
-		const page = +params.page || 1;
+	export async function load({ url, session }) {
+		const page = +url.searchParams.get('page') || 1;
 
 		const $limit = page * 10;
 		const $skip = (page - 1) * 10;
@@ -59,6 +59,8 @@
 						<button on:click={() => handleDelete(post._id)}>Delete</button>
 					</td>
 				</tr>
+			{:else}
+				<p>No posts yet</p>
 			{/each}
 		</table>
 	</div>

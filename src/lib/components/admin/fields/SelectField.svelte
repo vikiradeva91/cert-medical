@@ -13,7 +13,7 @@
 
 <select {name} id={name} bind:value>
 	{#if placeholder}
-		<option value selected>{placeholder}</option>
+		<option value selected disabled>{placeholder}</option>
 	{/if}
 	{#each Object.entries(options) as [value, name]}
 		<option {value}>{name}</option>
