@@ -44,7 +44,7 @@
 		<RichTextareaField
 			label="Body"
 			name="body"
-			bind:html={input.body}
+			bind:value={input.body}
 			error={errors.body && errors.body.message}
 		/>
 	</div>

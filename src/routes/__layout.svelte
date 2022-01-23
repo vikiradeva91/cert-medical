@@ -63,7 +63,7 @@
 
 <footer>
 	<section class="footer-info">
-		<div class="footer-pdg">
+		<div class="footer-pdg split">
 			<div class="c3 p1">
 				<h3>Cert Medical</h3>
 				<a href="/services">Services</a><br />

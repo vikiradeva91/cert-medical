@@ -3,6 +3,7 @@
 		label,
 		placeholder = undefined,
 		value,
+		disabled = undefined,
 		error;
 </script>
 
@@ -10,7 +11,7 @@
 	<label for={name}>{label}</label>
 {/if}
 
-<input type="text" {name} id={name} {placeholder} bind:value />
+<input type="text" {name} id={name} {placeholder} bind:value {disabled} />
 
 {#if error}
 	<div class="field-error">

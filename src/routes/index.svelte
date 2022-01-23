@@ -2,7 +2,8 @@
 	import { client } from '$lib/api';
 
 	export async function load() {
-		let page = {};
+		let page = {},
+			blocks = {};
 
 		try {
 			const response = await client.post('query/page/', {
@@ -10,41 +11,49 @@
 			});
 
 			page = response.data.items[0];
+
+			page.blocks.map(({ key, value }) => {
+				blocks[key] = value;
+			});
 		} catch (error) {
 			console.log(error);
 			return {};
 		}
 
 		return {
-			props: { page }
+			props: { page, blocks }
 		};
 	}
 </script>
 
 <script>
-	export let page;
+	export let page, blocks;
 </script>
 
 <svelte:head>
-	<title>{page.title}</title>
+	<title>{page.title || ''}</title>
 </svelte:head>
 
 <div class="homeimg">
 	<h1 class="heading-primary-main">CE Marking for Medical Devices</h1>
 </div>
 
-<h1 class="content-title mrg-top">
-	<i>― {page.blocks[0].name} ―</i>
-</h1>
+{#if blocks.heading}
+	<h1 class="content-title mrg-top">
+		<i>― {blocks.heading} ―</i>
+	</h1>
+{/if}
 
-<section class="row p2">
-	<div class="CE-content">
-		{@html page.blocks[0].body}
-	</div>
-	<div class="CE-img">
-		<img src="/img/section_photo_operation.jpg" alt="" />
-	</div>
-</section>
+{#if blocks.trusted}
+	<section class="row p2">
+		<div class="CE-content">
+			{@html blocks.trusted || ''}
+		</div>
+		<div class="CE-img">
+			<img src="/img/section_photo_operation.jpg" alt="" />
+		</div>
+	</section>
+{/if}
 
 <div class="calltoaction">
 	<h2>Set the date for your market access</h2>

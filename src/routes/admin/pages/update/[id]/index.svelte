@@ -22,8 +22,16 @@
 <script>
 	import TextField from '$lib/components/admin/fields/TextField.svelte';
 	import RichTextareaField from '$lib/components/admin/fields/RichTextareaField.svelte';
+	import TextareaField from '$lib/components/admin/fields/TextareaField.svelte';
+	import SelectField from '$lib/components/admin/fields/SelectField.svelte';
 
 	export let page;
+
+	const components = {
+		text: TextField,
+		textarea: TextareaField,
+		rte: RichTextareaField
+	};
 
 	let created, edited;
 
@@ -41,15 +49,13 @@
 		}
 	};
 
-	const handleBlockUpdate = async () => {
+	const handleBlockUpdate = async (index) => {
 		try {
 			const response = await client.patch(`page/${page._id}`, {
-				$set: { [`blocks.${edited.key}`]: edited }
+				$set: { [`blocks.${index}`]: page.blocks[index] }
 			});
 
 			page = response.data;
-
-			edited = response.data.blocks[edited.key];
 		} catch (error) {
 			console.log(error);
 			errors = error.response.data.errors;
@@ -73,12 +79,12 @@
 		}
 	};
 
-	const handleBlockDelete = async (id) => {
+	const handleBlockDelete = async (index) => {
 		edited = undefined;
 
 		try {
 			const response = await client.patch(`page/${page._id}`, {
-				$pull: { blocks: { _id: id } }
+				$pull: { blocks: { key: page.blocks[index].key } }
 			});
 
 			page = response.data;
@@ -95,112 +101,167 @@
 			<h3>Page</h3>
 		</div>
 		<div class="card-body">
-			<TextField
-				label="Name"
-				name="name"
-				bind:value={page.name}
-				error={errors.name && errors.name.message}
-			/>
-			<TextField
-				label="Slug"
-				name="slug"
-				bind:value={page.slug}
-				error={errors.slug && errors.slug.message}
-			/>
-			<TextField
-				label="Title"
-				name="title"
-				bind:value={page.title}
-				error={errors.title && errors.title.message}
-			/>
-			<TextField
-				label="Path"
-				name="path"
-				bind:value={page.path}
-				error={errors.path && errors.path.message}
-			/>
 			<div>
-				<button on:click={handleUpdate}>Save page</button>
+				<TextField
+					label="Name"
+					name="name"
+					bind:value={page.name}
+					error={errors.name && errors.name.message}
+				/>
+				<TextField
+					label="Slug"
+					name="slug"
+					bind:value={page.slug}
+					error={errors.slug && errors.slug.message}
+				/>
+				<TextField
+					label="Title"
+					name="title"
+					bind:value={page.title}
+					error={errors.title && errors.title.message}
+				/>
+				<TextField
+					label="Path"
+					name="path"
+					bind:value={page.path}
+					error={errors.path && errors.path.message}
+				/>
 			</div>
+			<button on:click={handleUpdate}>Save page</button>
 			<hr />
 			<div class="card-header">
-				<h3>Page blocks</h3>
-			</div>
-			<table>
-				<tr>
-					<th>Name</th>
-					<th>Actions</th>
-				</tr>
-				{#each page.blocks as block, i}
-					<tr>
-						<td>{block.name}</td>
-						<td>
-							<a
-								href="/"
-								on:click|preventDefault={() => {
-									edited = { key: i, ...block };
-									created = undefined;
-								}}>Edit</a
-							>
-
-							<button on:click={() => handleBlockDelete(block._id)}>Delete</button>
-						</td>
-					</tr>
-				{:else}
-					<h5>No blocks</h5>
-				{/each}
-			</table>
-			<div class="blocks">
-				<div>
-					{#if edited}
-						<TextField
-							label="Name"
-							name="block-name"
-							bind:value={edited.name}
-							error={errors.name && errors.name.message}
-						/>
-						<div>
-							<RichTextareaField
-								label="Body"
-								name="block-nody"
-								bind:html={edited.body}
-								error={errors.body && errors.body.message}
-							/>
-						</div>
-						<div>
-							<button on:click={handleBlockUpdate}>Save block</button>
-						</div>
-						<div>
-							<button on:click={() => (edited = undefined)}>Close</button>
-						</div>
+				<div class="split aside">
+					<h3>Page blocks</h3>
+					{#if !created}
+						<button
+							on:click={() => {
+								created = {};
+							}}>Create new block</button
+						>
 					{/if}
 				</div>
-
-				{#if created}
-					<TextField
-						label="Name"
-						name="block-name"
-						bind:value={created.name}
-						error={errors.name && errors.name.message}
-					/>
-					<div>
-						<RichTextareaField
-							label="Body"
-							name="block-nody"
-							bind:html={created.body}
-							error={errors.body && errors.body.message}
+				<div>
+					{#if created}
+						<TextField label="Name" name="name" bind:value={created.name} />
+						<TextField label="Key" name="key" bind:value={created.key} />
+						<SelectField
+							label="Input type"
+							name="inputType"
+							placeholder="Select input type"
+							options={{ text: 'Text', rte: 'Rich text' }}
+							bind:value={created.inputType}
 						/>
-					</div>
-					<button on:click={handleBlockCreate}>Save new block</button>
-				{:else}
-					<button
-						on:click={() => {
-							created = {};
-							edited = undefined;
-						}}>Create new block</button
-					>
-				{/if}
+						{#if created.inputType}
+							<svelte:component
+								this={components[created.inputType]}
+								label={created.name}
+								bind:value={created.value}
+								name={created.key}
+							/>
+						{/if}
+						<button on:click={handleBlockCreate}>Save new block</button>
+						<button on:click={() => (created = undefined)}>Close</button>
+					{/if}
+				</div>
+				<div class="blocks">
+					{#each page.blocks as block, i}
+						<div class="tab">
+							<input id={block.key} type="checkbox" />
+							<label for={block.key}>{block.name}</label>
+							<div class="tab-content">
+								<TextField label="Name" name="name" bind:value={block.name} />
+								<TextField label="Key" name="key" bind:value={block.key} />
+								<TextField
+									label="Type"
+									name="inputType"
+									bind:value={block.inputType}
+									disabled
+								/>
+
+								<svelte:component
+									this={components[block.inputType]}
+									label={block.name}
+									bind:value={block.value}
+									name={block.key}
+								/>
+
+								<div>
+									<button on:click={() => handleBlockUpdate(i)}>Save block</button
+									>
+								</div>
+
+								<div>
+									<button on:click={() => handleBlockDelete(i)}>Delete</button>
+								</div>
+							</div>
+						</div>
+					{:else}
+						<h5>No blocks</h5>
+					{/each}
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<style>
+	/* (A) TABS CONTAINER */
+	.tab {
+		position: relative;
+	}
+
+	/* (B) HIDE CHECKBOX */
+	.tab input {
+		display: none;
+	}
+
+	/* (C) TAB LABEL */
+	.tab label {
+		display: block;
+		margin-top: 10px;
+		padding: 10px;
+		color: #fff;
+		font-weight: bold;
+		background: #2d5faf;
+		cursor: pointer;
+	}
+
+	/* (D) TAB CONTENT */
+	.tab .tab-content {
+		background: #ccdef9;
+		/* CSS ANIMATION WILL NOT WORK WITH AUTO HEIGHT */
+		/* THIS IS WHY WE USE MAX-HEIGHT INSTEAD */
+		overflow: hidden;
+		transition: max-height 0.3s;
+		max-height: 0;
+		padding: 0 1em;
+		max-width: 50%;
+	}
+
+	/* (E) OPEN TAB ON CHECKED */
+	.tab input:checked ~ .tab-content {
+		min-height: 100vh;
+		max-width: initial;
+	}
+
+	.tab input:checked ~ label {
+		max-width: initial;
+	}
+
+	.tab label {
+		max-width: 50%;
+	}
+
+	/* (F) EXTRA - ADD ARROW INDICATOR */
+	.tab label::after {
+		content: '\25b6';
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		display: block;
+		transition: all 0.4s;
+	}
+	.tab input:checked ~ label::after {
+		transform: rotate(90deg);
+	}
+</style>

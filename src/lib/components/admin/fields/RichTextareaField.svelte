@@ -3,12 +3,23 @@
 
 	export let name,
 		label,
-		html = '',
+		value = '',
 		error;
 
 	let conf = {
 		plugins: 'code',
-		toolbar: 'undo redo code'
+		menubar: false,
+		plugins: [
+			'advlist autolink lists link image charmap print preview anchor',
+			'searchreplace visualblocks code fullscreen',
+			'insertdatetime media table paste code help wordcount'
+		],
+		toolbar:
+			'undo redo code searchreplace fullscreen | formatselect | ' +
+			'bold italic backcolor | alignleft aligncenter ' +
+			'alignright alignjustify | bullist numlist outdent indent | ' +
+			'removeformat | help',
+		resize: 'both'
 	};
 </script>
 
@@ -16,7 +27,7 @@
 	<label for={name}>{label}</label>
 {/if}
 
-<Editor apiKey="fm8u5bpl9el05gktfaf5umq2jl07zwi3dvkpfdbxmvflopgm" bind:value={html} {conf} />
+<Editor apiKey="fm8u5bpl9el05gktfaf5umq2jl07zwi3dvkpfdbxmvflopgm" bind:value {conf} />
 
 {#if error}
 	<div class="field-error">

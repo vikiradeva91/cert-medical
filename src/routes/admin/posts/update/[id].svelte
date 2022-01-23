@@ -60,7 +60,7 @@
 		<RichTextareaField
 			label="Body"
 			name="body"
-			bind:html={post.body}
+			bind:value={post.body}
 			error={errors.body && errors.body.message}
 		/>
 	</div>
