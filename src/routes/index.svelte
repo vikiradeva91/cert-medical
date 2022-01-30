@@ -2,32 +2,28 @@
 	import { client } from '$lib/api';
 
 	export async function load() {
-		let page = {},
-			blocks = {};
+		let page = {};
 
 		try {
 			const response = await client.post('query/page/', {
 				$match: { path: '/' }
 			});
 
-			page = response.data.items[0];
-
-			page.blocks.map(({ key, value }) => {
-				blocks[key] = value;
-			});
+			page = response.data.items.length && response.data.items[0];
 		} catch (error) {
 			console.log(error);
-			return {};
 		}
 
 		return {
-			props: { page, blocks }
+			props: { page }
 		};
 	}
 </script>
 
 <script>
-	export let page, blocks;
+	export let page;
+
+	let { blocks } = page;
 </script>
 
 <svelte:head>
@@ -38,19 +34,17 @@
 	<h1 class="heading-primary-main">CE Marking for Medical Devices</h1>
 </div>
 
-{#if blocks.heading}
-	<h1 class="content-title mrg-top">
-		<i>― {blocks.heading} ―</i>
-	</h1>
-{/if}
-
 {#if blocks.trusted}
+	<h1 class="content-title mrg-top">
+		<i>― {blocks.trusted.data.title} ―</i>
+	</h1>
+
 	<section class="row p2">
 		<div class="CE-content">
-			{@html blocks.trusted || ''}
+			{@html blocks.trusted.data.body}
 		</div>
 		<div class="CE-img">
-			<img src="/img/section_photo_operation.jpg" alt="" />
+			<img src="/img/{blocks.trusted.data.feature}" alt={blocks.trusted.data.title} />
 		</div>
 	</section>
 {/if}
@@ -108,57 +102,3 @@
 		</div>
 	</div>
 </section>
-
-<!-- <h1 class="steps-title mrg-top">
-	<i>― Obtaining a EC declaration of conformity for your medical device ―</i>
-</h1>
-
-<div class="container">
-	<div class="row">
-		<div class="col">
-			<div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
-				<div class="timeline-step">
-					<div class="timeline-content" data-original-title="STEP 1">
-						<div class="inner-circle" />
-						<p class="h6 mt-3 mb-1" style="padding: 16px 0;"><b> STEP 1 </b></p>
-						<p class="h6 text-muted mb-0 mb-lg-0">Identify EU requirements for your product</p>
-					</div>
-				</div>
-				<div class="timeline-step">
-					<div class="timeline-content" data-original-title="STEP 2">
-						<div class="inner-circle" />
-						<p class="h6 mt-3 mb-1" style="padding: 16px 0;"><b> STEP 2 </b></p>
-						<p class="h6 text-muted mb-0 mb-lg-0">Assess level of conformity and testing</p>
-					</div>
-				</div>
-				<div class="timeline-step">
-					<div class="timeline-content" data-original-title="STEP 3">
-						<div class="inner-circle" />
-						<p class="h6 mt-3 mb-1" style="padding: 16px 0;"><b> STEP 3 </b></p>
-						<p class="h6 text-muted mb-0 mb-lg-0">
-							Assistance and review of the technical documentation
-						</p>
-					</div>
-				</div>
-				<div class="timeline-step">
-					<div class="timeline-content" data-original-title="STEP 4">
-						<div class="inner-circle" />
-						<p class="h6 mt-3 mb-1" style="padding: 16px 0;"><b> STEP 4 </b></p>
-						<p class="h6 text-muted mb-0 mb-lg-0">
-							CE Mark can be affixed and declaration of conformity is issued
-						</p>
-					</div>
-				</div>
-				<div class="timeline-step mb-0">
-					<div class="timeline-content" data-original-title="STEP 5">
-						<div class="inner-circle" />
-						<p class="h6 mt-3 mb-1" style="padding: 16px 0;"><b> STEP 5 </b></p>
-						<p class="h6 text-muted mb-0 mb-lg-0">
-							Product is certified and can be traded in the EU
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> -->

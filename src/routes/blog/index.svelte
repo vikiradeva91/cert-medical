@@ -37,7 +37,7 @@
 					<img src="/img/blog1.jpg" alt="" title={post.title} />
 				</a>
 				<a class="tag" href={`/blog/${post.slug}`}
-					>{moment(post.created).format('MMMM DD, YYYY')}</a
+					>{moment(post.createdAt).format('MMMM DD, YYYY')}</a
 				>
 				<div>
 					<h2>

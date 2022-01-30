@@ -2,32 +2,28 @@
 	import { client } from '$lib/api';
 
 	export async function load() {
-		let page = {},
-			blocks = {};
+		let page = {};
 
 		try {
 			const response = await client.post('query/page/', {
 				$match: { path: '/about' }
 			});
 
-			page = response.data.items[0];
-
-			page.blocks.map(({ key, value }) => {
-				blocks[key] = value;
-			});
+			page = response.data.items.length && response.data.items[0];
 		} catch (error) {
 			console.log(error);
-			return {};
 		}
 
 		return {
-			props: { page, blocks }
+			props: { page }
 		};
 	}
 </script>
 
 <script>
-	export let page, blocks;
+	export let page;
+
+	let { who, what } = page.data;
 </script>
 
 <svelte:head>
@@ -38,12 +34,12 @@
 	<h1 class="content-title" style="color: #fff;">About us</h1>
 </div>
 <div class="about-main">
-	{#if blocks.who}
+	{#if who}
 		<div class="split">
 			<div class="c2 p2">
-				<h1>Who we are</h1>
+				<h1>{who.title.value}</h1>
 				<br />
-				{@html blocks.who}
+				{@html who.body.value}
 				<br /><br />
 				<p style="font-weight: bold; font-size: 20px;">We make the future safe.</p>
 				<br />
@@ -51,20 +47,20 @@
 			</div>
 
 			<div class="c2 ">
-				<img src="/img/aboutus_1.jpg" alt="" />
+				<img src="/img/{who.feature.value}" alt={who.title.value} />
 			</div>
 		</div>
 	{/if}
 
-	{#if blocks.what}
+	{#if what}
 		<div class="split">
 			<div class="c2 hidden">
-				<img src="/img/aboutus_2.jpg" alt="" />
+				<img src="/img/{what.feature.value}" alt={what.title.value} />
 			</div>
 			<div class="c2 p2">
-				<h1>What we do</h1>
+				<h1>{what.title.value}</h1>
 				<br />
-				{@html blocks.what}
+				{@html what.body.value}
 			</div>
 		</div>
 	{/if}

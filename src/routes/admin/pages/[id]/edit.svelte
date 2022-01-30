@@ -9,6 +9,8 @@
 		try {
 			const response = await preloadClient(session.token).get(`page/${id}`);
 			item = response.data;
+
+			console.log('item', item);
 		} catch (error) {
 			console.log(error);
 		}
@@ -175,8 +177,19 @@
 					{/if}
 				</div>
 				<div class="blocks">
-					{#each page.blocks as block, i}
-						<div class="tab">
+					{JSON.stringify(page)}
+					<!-- {#each Object.entries(page.blocks) as [key, value], i} -->
+					<!-- <div>
+							<a href={`/admin/pages/${page._id}/blocks/${block._id}/edit`}
+								>{block.name}</a
+							>
+						</div> -->
+					<!-- <div>
+							<textarea name="test" id="test" cols="30" rows="10">
+								{JSON.stringify(value)}
+							</textarea>
+						</div> -->
+					<!-- <div class="tab">
 							<input id={block.key} type="checkbox" />
 							<label for={block.key}>{block.name}</label>
 							<div class="tab-content">
@@ -205,74 +218,12 @@
 									<button on:click={() => handleBlockDelete(i)}>Delete</button>
 								</div>
 							</div>
-						</div>
-					{:else}
+						</div> -->
+					<!-- {:else}
 						<h5>No blocks</h5>
-					{/each}
+					{/each} -->
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
-<style>
-	/* (A) TABS CONTAINER */
-	.tab {
-		position: relative;
-	}
-
-	/* (B) HIDE CHECKBOX */
-	.tab input {
-		display: none;
-	}
-
-	/* (C) TAB LABEL */
-	.tab label {
-		display: block;
-		margin-top: 10px;
-		padding: 10px;
-		color: #fff;
-		font-weight: bold;
-		background: #2d5faf;
-		cursor: pointer;
-	}
-
-	/* (D) TAB CONTENT */
-	.tab .tab-content {
-		background: #ccdef9;
-		/* CSS ANIMATION WILL NOT WORK WITH AUTO HEIGHT */
-		/* THIS IS WHY WE USE MAX-HEIGHT INSTEAD */
-		overflow: hidden;
-		transition: max-height 0.3s;
-		max-height: 0;
-		padding: 0 1em;
-		max-width: 50%;
-	}
-
-	/* (E) OPEN TAB ON CHECKED */
-	.tab input:checked ~ .tab-content {
-		min-height: 100vh;
-		max-width: initial;
-	}
-
-	.tab input:checked ~ label {
-		max-width: initial;
-	}
-
-	.tab label {
-		max-width: 50%;
-	}
-
-	/* (F) EXTRA - ADD ARROW INDICATOR */
-	.tab label::after {
-		content: '\25b6';
-		position: absolute;
-		right: 10px;
-		top: 10px;
-		display: block;
-		transition: all 0.4s;
-	}
-	.tab input:checked ~ label::after {
-		transform: rotate(90deg);
-	}
-</style>
