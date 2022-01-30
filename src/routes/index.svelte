@@ -23,7 +23,7 @@
 <script>
 	export let page;
 
-	let { blocks } = page;
+	let { trusted } = page.data;
 </script>
 
 <svelte:head>
@@ -34,17 +34,17 @@
 	<h1 class="heading-primary-main">CE Marking for Medical Devices</h1>
 </div>
 
-{#if blocks.trusted}
+{#if trusted}
 	<h1 class="content-title mrg-top">
-		<i>― {blocks.trusted.data.title} ―</i>
+		<i>― {trusted.title.value} ―</i>
 	</h1>
 
 	<section class="row p2">
 		<div class="CE-content">
-			{@html blocks.trusted.data.body}
+			{@html trusted.body.value}
 		</div>
 		<div class="CE-img">
-			<img src="/img/{blocks.trusted.data.feature}" alt={blocks.trusted.data.title} />
+			<img src="/img/{trusted.feature.value}" alt={trusted.title.value} />
 		</div>
 	</section>
 {/if}
