@@ -31,7 +31,7 @@
 </script>
 
 <svelte:head>
-	<title>CE Marking for Medical Devices - Certification Experts</title>
+	<title>Blog - {post.title}</title>
 </svelte:head>
 
 <div class="homeimg">

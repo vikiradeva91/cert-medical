@@ -12,6 +12,10 @@
 	};
 </script>
 
+<svelte:head>
+	<meta name="robots" content="noindex nofollow" />
+</svelte:head>
+
 <div class="green">
 	<section class="green-width">
 		<h1>Contact with us</h1>

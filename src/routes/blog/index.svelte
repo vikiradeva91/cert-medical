@@ -26,6 +26,10 @@
 	export let posts;
 </script>
 
+<svelte:head>
+	<title>CERT Medical - Blog</title>
+</svelte:head>
+
 <div class="blog-title ">
 	<h1 class="content-title" style="color: #fff;">Blog</h1>
 </div>

@@ -25,6 +25,10 @@
 	};
 </script>
 
+<svelte:head>
+	<meta name="robots" content="noindex nofollow" />
+</svelte:head>
+
 <div class="container flex center">
 	<div class="flex stack">
 		<EmailField
