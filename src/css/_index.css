@@ -75,11 +75,11 @@ section.row .CE-img {
   margin-bottom: 30px;
 }
 
-.calltoaction a.submit:hover {
+/* .calltoaction a.submit:hover {
   background-color: #119da4;
   color: #fff;
   transition: background-color 0.5s ease, border 0.5s ease;
-}
+} */
 
 .services.flex .service {
   /* color: #fff; */
@@ -90,6 +90,14 @@ section.row .CE-img {
 .services .service {
   box-sizing: border-box;
   position: relative;
+}
+
+.services.flex .service {    transition: transform .2s;}
+
+.services.flex .service:hover {
+  transform: scale(1.5);
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
 }
 
 .services.flex .service img {
