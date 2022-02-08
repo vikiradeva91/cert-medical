@@ -160,18 +160,18 @@ a.submit {
     display: inline-block;
     color: #1F2040;
     background-color: #ffc857;
-    /* border-radius: 5px; */
+    border-radius: 5px;
     border: none;
     cursor: pointer;
     transition: background-color .5s ease,border .5s ease;
     -webkit-appearance: none;
-    box-shadow: -25px -20px 0px -2px rgba(254, 237, 0, 0.49);
+    /* box-shadow: -25px -20px 0px -2px rgba(254, 237, 0, 0.49); */
 }
 
-/* a.submit:hover {
+a.submit:hover {
     background-color: #19647e;
     color: #fff;
-} */
+} 
 
 :root {
     --h4-font-size:25px;

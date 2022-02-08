@@ -55,8 +55,9 @@
 </div>
 
 <!-- <div class="anchor"> <div id="services"></div> </div> -->
+
 <h1 class="services-title ">
-	<i>― Our services ―</i>
+	<i>― Our services that you can use ―</i>
 </h1>
 
 <section class="services flex">

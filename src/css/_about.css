@@ -17,4 +17,8 @@
 
 @media all and (max-width: 940px) {
  .hidden { display: none;}
+
+ img.respons-img {margin-top: 20px;}
+
+ .about-main { margin: 25px auto;}
 }

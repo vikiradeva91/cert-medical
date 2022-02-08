@@ -36,18 +36,21 @@
 <div class="about-main">
 	{#if who}
 		<div class="split">
-			<div class="c2 p2">
-				<h1>{who.title.value}</h1>
-				<br />
-				{@html who.body.value}
-				<br /><br />
-				<p style="font-weight: bold; font-size: 20px;">We make the future safe.</p>
-				<br />
-				<a href="contacts" class="submit">Learn more about us</a>
+			<div class="c2 ">
+				<div class="p02">
+					<h1>{who.title.value}</h1>
+					<br />
+					{@html who.body.value}
+					<br />
+					<p style="font-weight: bold; font-size: 20px;">We make the future safe.</p>
+					<br />
+					<a href="contacts" class="submit">Learn more about us</a>
+					<br />
+				</div>
 			</div>
 
 			<div class="c2 ">
-				<img src="/img/{who.feature.value}" alt={who.title.value} />
+				<img  class="respons-img" src="/img/{who.feature.value}" alt={who.title.value} />
 			</div>
 		</div>
 	{/if}
@@ -57,10 +60,12 @@
 			<div class="c2 hidden">
 				<img src="/img/{what.feature.value}" alt={what.title.value} />
 			</div>
-			<div class="c2 p2">
-				<h1>{what.title.value}</h1>
-				<br />
-				{@html what.body.value}
+			<div class="c2">
+				<div class=" p02">
+					<h1>{what.title.value}</h1>
+					<br />
+					{@html what.body.value}
+				</div>
 			</div>
 		</div>
 	{/if}
