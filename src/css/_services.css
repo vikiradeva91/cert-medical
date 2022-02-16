@@ -3,49 +3,40 @@
     padding: 50px;
 }
 
-.services-content {
-    padding: 20px;
-}
-
-/* **** */
-.first {
-    /* background-color: #f3f3f3; */
-    background-image: url(/svg/cert_medical_logo.svg),  linear-gradient(45deg, #fffefe9d 10%, #ffffff9e 90%);
-    background-repeat: no-repeat;
-    background-position: -170px;
-    background-blend-mode: overlay;
-    background-size: contain;
-    margin: 20px 0;
-}
-
-.second-grid .grid-img {
-    box-sizing: border-box;
+.accordion-services {
     width: 600px;
-    margin: 0 35px;
-}
+    margin: auto;
+  }
+  .accordion-services section a {
+    background: #ccc;
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    display: block;
+    font-size: 1.3em;
+    letter-spacing: 3px;
+    overflow: hidden;
+    border-bottom: 3px solid #aaa69d;
+  }
+  .accordion-services section p, 
+  .accordion-services section ul {
+    padding: 10px;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    background: #27ae60;
+    color: #fff;
+    overflow: hidden;
+    letter-spacing: 2px;
+    transition: 2s;
+  }
+  .accordion-services section:target p,
+  .accordion-services section:target ul {
+    height: 10em;
+    opacity: 1;
+    padding: 20px;
+  }
+  
 
-@media all and (min-width: 940px) {
-    .first-flex {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .second-grid {
-        display: grid;
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-
-@media all and (max-width: 939px) {
-    .first-flex img { display: none;}
-
-}
-
-
-.second {
-    background-color: #e6e6e6;
-}
-
-
+  .accordion-services section:target ul { margin: 0;}
