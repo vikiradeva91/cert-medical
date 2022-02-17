@@ -34,19 +34,18 @@
 	<title>Blog - {post.title}</title>
 </svelte:head>
 
-<div class="homeimg">
-	<h1 class="heading-primary-main">CE Marking for Medical Devices</h1>
+<div class="blog-title">
+	<h1 class="blog-in-title">{post.title}</h1>
 </div>
 
-<h1 class="content-title mrg-top">
+<!-- <h1 class="content-title mrg-top">
 	<i>― {post.title} ―</i>
-</h1>
-
-<section class="row p2">
-	<div class="CE-content">
-		{@html post.body}
-	</div>
-	<div class="CE-img">
-		<img src="/img/operating-room-surgery.jpg" alt="" />
-	</div>
-</section>
+</h1> -->
+<div style="background-color: #f0f0f0;" class="p2">
+	<section class="blog-in">
+		<div class="grouplabel"><a href="/blog">Bring a medical device</a><em> January 30, 2022</em></div>
+		<div class="p2">
+			{@html post.body}
+		</div>
+	</section>
+</div>

@@ -36,5 +36,34 @@ a.tag {
 .blog-img>a>img {
     margin-bottom: -34px;
     width: 100%;
+
 }
 
+
+
+/* BLOG-IN */
+.blog-in {
+    background-color: #fff;
+    margin: 0 auto;
+    max-width: 1080px;
+    box-sizing: border-box;
+}
+
+.blog-in-title {
+    color: #fff;
+    text-align: center;
+}
+
+.grouplabel {
+    background-color: #fff;
+    line-height: 42px;
+}
+
+.grouplabel a {
+    font-size: 18px;
+    padding: 0 15px;
+    background: #1f2041;
+    margin-right: 10px;
+    display: inline-block;
+    color: #fff;
+}
