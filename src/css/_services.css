@@ -3,37 +3,40 @@
     padding: 50px;
 }
 
+.anchor { position: relative;}
+
+#anchor-1 {
+  position: absolute;
+  top: -150px;
+}
+
 .accordion-services {
-    width: 600px;
+    width:100%;
     margin: auto;
   }
   .accordion-services section a {
-    background: #ccc;
-    color: #000;
+    background: #4b3f72;
+    color: #fff;
     text-decoration: none;
     text-align: center;
     padding: 10px;
     display: block;
-    font-size: 1.3em;
-    letter-spacing: 3px;
+    /* font-size: 1.3em; */
     overflow: hidden;
-    border-bottom: 3px solid #aaa69d;
+    border-bottom: 3px solid #1f2041;
   }
-  .accordion-services section p, 
-  .accordion-services section ul {
+  .accordion-services section p {
     padding: 10px;
     overflow: hidden;
     height: 0;
     opacity: 0;
-    background: #27ae60;
+    background: #ffc857;
     color: #fff;
     overflow: hidden;
-    letter-spacing: 2px;
     transition: 2s;
   }
-  .accordion-services section:target p,
-  .accordion-services section:target ul {
-    height: 10em;
+  .accordion-services section:target p {
+    height: 100%;
     opacity: 1;
     padding: 20px;
   }

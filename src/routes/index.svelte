@@ -61,16 +61,20 @@
 </h1>
 
 <section class="services flex">
+	
 	<div class="service animated animatedFadeInUp fadeInUp">
-		<img src="/svg/iso.svg" alt="" />
-		<div class="services-text">
-			<h4>QUALITY MANAGEMENT SYSTEMS</h4>
-			<p>
-				Development and implementation of ISO 13485 - Quality Management Systems for medical
-				devices manufacturers
-			</p>
-		</div>
+		<a href="services#anchor-1">
+			<img src="/svg/iso.svg" alt="" />
+			<div class="services-text">
+				<h4>QUALITY MANAGEMENT SYSTEMS</h4>
+				<p>
+					Development and implementation of ISO 13485 - Quality Management Systems for medical
+					devices manufacturers
+				</p>
+			</div>
+		</a>
 	</div>
+
 	<div class="service animated animatedFadeInUp fadeInUp">
 		<img src="/svg/archive.svg" alt="" />
 		<div class="services-text">
@@ -81,6 +85,7 @@
 			</p>
 		</div>
 	</div>
+
 	<div class="service animated animatedFadeInUp fadeInUp">
 		<img src="/svg/Flask.svg" alt="" />
 		<div class="services-text">
@@ -91,6 +96,7 @@
 			</p>
 		</div>
 	</div>
+
 	<div class="service animated animatedFadeInUp fadeInUp">
 		<img src="/svg/badge.svg" alt="" />
 		<div class="services-text">
@@ -102,4 +108,5 @@
 			</p>
 		</div>
 	</div>
+
 </section>
