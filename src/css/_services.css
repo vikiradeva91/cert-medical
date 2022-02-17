@@ -18,7 +18,6 @@
     background: #4b3f72;
     color: #fff;
     text-decoration: none;
-    text-align: center;
     padding: 10px;
     display: block;
     /* font-size: 1.3em; */
@@ -33,13 +32,11 @@
     background: #ffc857;
     color: #fff;
     overflow: hidden;
-    transition: 2s;
+    transition: 0.5s;
   }
   .accordion-services section:target p {
     height: 100%;
     opacity: 1;
     padding: 20px;
   }
-  
-
-  .accordion-services section:target ul { margin: 0;}
+ 
