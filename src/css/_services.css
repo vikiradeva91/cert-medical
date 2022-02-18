@@ -3,6 +3,10 @@
     padding: 50px;
 }
 
+.services-container {
+  background: #ececec;
+}
+
 .anchor { position: relative;}
 
 #anchor-1 {
@@ -29,10 +33,11 @@
     overflow: hidden;
     height: 0;
     opacity: 0;
-    background: #ffc857;
-    color: #fff;
+    background: #fff;
+    border:1.5px solid #1f2041;
+    /* color: #fff; */
     overflow: hidden;
-    transition: 0.5s;
+    transition: 1s;
   }
   .accordion-services section:target p {
     height: 100%;

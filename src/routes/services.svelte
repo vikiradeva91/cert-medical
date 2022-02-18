@@ -2,7 +2,7 @@
 	<h1 class="content-title" style="color: #1F2040;">Services</h1>
 </div>
 
-<div>
+<div class="services-container">
 	<h1 style="font-size: 35px; text-align:center " class="p2">
 		Detailed list of EU MDR 745 compliance services we offer to MedTech companies
 	</h1>
