@@ -35,9 +35,11 @@ section.row {
 }
 
 .services-title,
+.trusted-title,
 .steps-title {
   color: #ffc857;
   text-align: center;
+  text-shadow: 2px 1px 2px #b2b1b1;
 }
 
 section.row .CE-content h3 {
@@ -130,6 +132,8 @@ section.row .CE-img {
 @media all and (min-width: 961px) {
   .homeimg h1 {
     font-size: 60px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px #444;
   }
 
   section.row .CE-content {

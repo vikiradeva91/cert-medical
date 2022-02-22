@@ -89,14 +89,15 @@
 				168 Tsar Boris III Blvd.,<br />
 				Andromeda Business Center,<br />
 				3rd floor, office 31
-			</p>
-			<p>
+			</p><br />
+			<p>	
+				<b>Petar Petrov</b><br />
+				<a href="tel:+359877122777" itemprop="telephone">0877 122 777 </a>
 				<b>
 					<a href="mailto:petar.emilov.petrov@gmail.com"
 						>petar.emilov.petrov@gmail.com
-					</a> <br />
+					</a> 
 				</b>
-				<a href="tel:+359877122777" itemprop="telephone">0877 122 777 </a>
 			</p>
 		</div>
 	</section>

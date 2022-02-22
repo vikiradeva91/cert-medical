@@ -35,7 +35,7 @@
 </svelte:head>
 
 <div class="blog-title">
-	<h1 class="blog-in-title">{post.title}</h1>
+	<h1 class="blog-in-title">BLOG ARTICLE </h1>
 </div>
 
 <!-- <h1 class="content-title mrg-top">
@@ -43,8 +43,9 @@
 </h1> -->
 <div style="background-color: #f0f0f0;" class="p2">
 	<section class="blog-in">
-		<div class="grouplabel"><a href="/blog">Bring a medical device</a><em> January 30, 2022</em></div>
+		<div class="grouplabel"><em> January 30, 2022</em></div>
 		<div class="p2">
+			<h1>{post.title}</h1>
 			{@html post.body}
 		</div>
 	</section>

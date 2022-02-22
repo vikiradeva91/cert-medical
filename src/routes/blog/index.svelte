@@ -36,26 +36,22 @@
 <div class="bg">
 	<section class="blog flex">
 		{#each posts as post}
-			<div class="blog-img c43 m1">
-				<a href={`/blog/${post.slug}`}>
-					<img src="/img/blog1.jpg" alt="" title={post.title} />
-				</a>
-				<a class="tag" href={`/blog/${post.slug}`}
-					>{moment(post.createdAt).format('MMMM DD, YYYY')}</a
-				>
-				<div>
-					<h2>
-						<a href={`/blog/${post.slug}`} title={post.title}>{post.title}</a>
-					</h2>
-					<p>
-						{post.body
-							.replace(/<[^>]+>/g, '')
-							.split(' ')
-							.splice(0, 20)
-							.join(' ') + ' ...'}
-					</p>
-				</div>
-			</div>
+		<div class="news-item">
+			<h2>
+				<a href={`/blog/${post.slug}`} title={post.title}>{post.title}</a>
+			</h2>
+			<p class="date">
+				<i class="icon-calendar"></i>                    
+				📅 <a class="tag" href={`/blog/${post.slug}`} >{moment(post.createdAt).format('MMMM DD, YYYY')}</a>
+			</p>
+			<p>
+				{post.body
+					.replace(/<[^>]+>/g, '')
+					.split(' ')
+					.splice(0, 20)
+					.join(' ') + ' ...'}
+			</p>
+		</div>
 		{/each}
 	</section>
 </div>

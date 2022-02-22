@@ -35,7 +35,7 @@
 </div>
 
 {#if trusted}
-	<h1 class="content-title mrg-top">
+	<h1 class="trusted-title mrg-top">
 		<i>― {trusted.title.value} ―</i>
 	</h1>
 
