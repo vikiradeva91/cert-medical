@@ -18,6 +18,8 @@
   text-align: center;
   margin: 0;
   font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 2px #444;
 }
 
 section.row {
@@ -40,6 +42,7 @@ section.row {
   color: #ffc857;
   text-align: center;
   text-shadow: 2px 1px 2px #b2b1b1;
+  padding: 0 5px;
 }
 
 section.row .CE-content h3 {
@@ -130,11 +133,7 @@ section.row .CE-img {
 }
 
 @media all and (min-width: 961px) {
-  .homeimg h1 {
-    font-size: 60px;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 2px #444;
-  }
+  .homeimg h1 { font-size: 60px;  }
 
   section.row .CE-content {
     flex: 0 0 65%;
@@ -220,8 +219,6 @@ main .homeimg {
   .calltoaction h2 {
     font-size: 32px;
   }
-
-  /* .steps { margin: 20px;} */
 
   .services {
     padding: 20px 10px;
@@ -311,70 +308,3 @@ main .homeimg {
   -webkit-animation-name: fadeInUp;
 }
 
-
-/* bootstrap steps */
-/* .container {
-  padding: 35px 0;
-}
-
-.timeline-steps {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap
-}
-
-.timeline-steps .timeline-step {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  margin: 1.7rem
-}
-
-@media (min-width:900px) {
-  .timeline-steps .timeline-step:not(:last-child):after {
-    content: "";
-    display: block;
-    border-top: .25rem dotted #119da4;
-    width: 7.46rem;
-    position: absolute;
-    left: 7.5rem;
-    top: .3125rem
-  }
-
-  .timeline-steps .timeline-step:not(:first-child):before {
-    content: "";
-    display: block;
-    border-top: .25rem dotted #119da4;
-    width: 5.8125rem;
-    position: absolute;
-    right: 7.5rem;
-    top: .3125rem
-  }
-}
-
-.timeline-steps .timeline-content {
-  width: 12rem;
-  text-align: center
-}
-
-.timeline-steps .timeline-content .inner-circle {
-  border-radius: 1.5rem;
-  height: 1rem;
-  width: 1rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #119da4
-}
-
-.timeline-steps .timeline-content .inner-circle:before {
-  content: "";
-  background-color: #119da4;
-  display: inline-block;
-  height: 3rem;
-  width: 3rem;
-  min-width: 3rem;
-  border-radius: 6.25rem;
-  opacity: .5
-} */

@@ -8,8 +8,8 @@
 }
 
 .blog {
-    padding: 50px 0;
-    width: 1080px;
+    padding: 50px 20px;
+    max-width: 1080px;
     margin: 0 auto;
 }
 

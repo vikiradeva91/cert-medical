@@ -41,7 +41,7 @@
 <!-- <h1 class="content-title mrg-top">
 	<i>― {post.title} ―</i>
 </h1> -->
-<div style="background-color: #f0f0f0;" class="p2">
+<div style="background-color: #f0f0f0;" class="p1">
 	<section class="blog-in">
 		<div class="grouplabel"><em> January 30, 2022</em></div>
 		<div class="p2">

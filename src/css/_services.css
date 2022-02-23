@@ -20,7 +20,7 @@
 } */
 
 .accordion-services {
-    width:100%;
+    max-width:1080px;
     margin: auto;
 }
 .accordion-services section a {
