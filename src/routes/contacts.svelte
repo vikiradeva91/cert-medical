@@ -1,12 +1,20 @@
 <script>
 	import { client } from '$lib/api';
+	import CheckboxField from '$lib/components/admin/fields/CheckboxField.svelte';
+	import EmailField from '$lib/components/admin/fields/EmailField.svelte';
+	import TextareaField from '$lib/components/admin/fields/TextareaField.svelte';
+	import TextField from '$lib/components/admin/fields/TextField.svelte';
 
 	let inputs = {};
+	let errors = {};
+	let success = false;
 
 	const handleSubmit = async () => {
 		try {
-			const response = await client.post('inquiry', inputs);
-		} catch (error) {
+			await client.post('inquiry', inputs);
+			success = true;
+		} catch (err) {
+			errors = err.response.data.errors;
 			console.log(error);
 		}
 	};
@@ -20,68 +28,81 @@
 	<section class="green-width">
 		<h1>Contact with us</h1>
 		<div class="c-3">
-			<form class="contacts">
-				<fieldset>
-					<div class="w100">
-						<div class="p1">
-							<label for="name">Name</label>
-							<input
-								class="w100"
-								type="text"
-								name="Name"
-								id="name"
-								bind:value={inputs.name}
-							/>
+			{#if !success}
+				<form class="contacts">
+					<fieldset>
+						<div class="w100">
+							<div class="p1">
+								<TextField
+									name="Name"
+									id="name"
+									classes="w100"
+									label="Name"
+									bind:value={inputs.name}
+									error={errors.name && errors.name.message}
+								/>
+							</div>
+							<div class="p1">
+								<EmailField
+									classes="w100"
+									name="email"
+									id="email"
+									label="E-mail"
+									bind:value={inputs.email}
+									error={errors.email && errors.email.message}
+								/>
+							</div>
+							<div class="p1">
+								<TextField
+									name="Name"
+									id="name"
+									classes="w100"
+									label="Phone"
+									bind:value={inputs.phone}
+									error={errors.phone && errors.phone.message}
+								/>
+							</div>
+							<div class="p1">
+								<TextareaField
+									name="body"
+									id="body"
+									label="Message"
+									bind:value={inputs.body}
+									error={errors.body && errors.body.message}
+								/>
+							</div>
 						</div>
-						<div class="p1">
-							<label for="email">e-mail</label>
-							<input
-								class="w100"
-								type="text"
-								name="EMail"
-								id="email"
-								bind:value={inputs.email}
-							/>
-						</div>
-						<div class="p1">
-							<label for="phone">Phone</label>
-							<input
-								class="w100"
-								type="text"
-								name="Phone"
-								id="phone"
-								bind:value={inputs.phone}
-							/>
-						</div>
-						<div class="p1">
-							<label for="body">Message</label>
-							<textarea name="body" id="body" bind:value={inputs.body} />
-						</div>
-					</div>
 
-					<div style="display: flex; justify-content: space-between;" class="p1">
-						<div>
-							<label class="checkbox">
-								<input type="checkbox" bind:checked={inputs.terms} />
-								<span /> Yes! Send me regular email spam
-							</label>
-						</div>
-						<!-- <div>
+						<div style="display: flex; justify-content: space-between;" class="p1">
+							<div>
+								<CheckboxField
+									error={errors.terms && errors.terms.message}
+									bind:value={inputs.terms}
+								>
+									<span /> I`ve read and accept
+									<a href="/terms">the Terms &amp; Conditions</a>
+								</CheckboxField>
+							</div>
+							<!-- <div>
 							<label for="terms" class="checkbox">
 								<input type="checkbox" name="terms" id="terms" />
 								<span /> I`ve read and accept
 								<a href="/terms">the Terms &amp; Conditions</a>
 							</label>
 						</div> -->
-						<div>
-							<button type="submit" on:click|preventDefault={handleSubmit}
-								>Send</button
-							>
+							<div>
+								<button type="submit" on:click|preventDefault={handleSubmit}
+									>Send</button
+								>
+							</div>
 						</div>
-					</div>
-				</fieldset>
-			</form>
-		</div><div class="c3 pdg">
+					</fieldset>
+				</form>
+			{:else}
+				<p>Success</p>
+			{/if}
+		</div>
+		<div class="c3 pdg">
 			<h2>Cert Medical</h2>
 			<h3>Head Office</h3>
 			<p>
@@ -89,14 +110,15 @@
 				168 Tsar Boris III Blvd.,<br />
 				Andromeda Business Center,<br />
 				3rd floor, office 31
-			</p><br />
-			<p>	
+			</p>
+			<br />
+			<p>
 				<b>Petar Petrov</b><br />
 				<a href="tel:+359877122777" itemprop="telephone">0877 122 777 </a>
 				<b>
 					<a href="mailto:petar.emilov.petrov@gmail.com"
 						>petar.emilov.petrov@gmail.com
-					</a> 
+					</a>
 				</b>
 			</p>
 		</div>
