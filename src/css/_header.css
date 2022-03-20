@@ -6,13 +6,16 @@ header {
     width: 100%; */
 }
 
-header .logo { box-sizing: border-box;}
-header .logo img { 
+header .logo {
+    box-sizing: border-box;
+}
+
+header .logo img {
     width: 115px !important;
     padding: 15px;
 }
 
-@media all and (min-width: 961px){
+@media all and (min-width: 961px) {
 
     header section {
         display: flex;
@@ -36,6 +39,7 @@ header .logo img {
         transition: color 0.3s ease-in;
         text-transform: uppercase;
     }
+
     header nav a.hover:hover {
         color: #ffc857;
         transition: color 0.3s ease-in;
@@ -43,10 +47,11 @@ header .logo img {
 
 }
 
-@media all and (max-width: 960px){
+@media all and (max-width: 960px) {
     nav {
         padding-left: 10px;
     }
+
     nav a {
         display: block;
         text-align: left;

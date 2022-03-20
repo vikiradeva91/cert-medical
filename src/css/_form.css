@@ -1,4 +1,4 @@
-input[type="password"], input[type="text"], select, textarea {
+input[type="password"], input[type="text"], input[type="email"], select, textarea {
     font-family: sans-serif;
     font-size: 14px;
     margin: 0;
@@ -7,8 +7,8 @@ input[type="password"], input[type="text"], select, textarea {
     height: 32px;
     border: 1px solid #999;
     border-radius: 0;
-    background-color:#FFF;
-    color:    #000;
+    background-color: #FFF;
+    color: #000;
     box-sizing: border-box;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -19,6 +19,7 @@ form.contacts {
     max-width: 640px;
     margin: 0 auto;
 }
+
 form legend {
     padding: 8px 0;
     color: #555;
@@ -26,19 +27,20 @@ form legend {
 
 form legend.required::after {
     content: ' *';
-    color:  #ffc857;
+    color: #ffc857;
 }
+
 form fieldset {
     border: 0;
     margin: 0;
     padding: 0;
 }
 
-.w100, 
-.w100 button, 
-.w100 input[type="password"], 
-.w100 input[type="text"], 
-.w100 select, 
+.w100,
+.w100 button,
+.w100 input[type="password"],
+.w100 input[type="text"],
+.w100 select,
 .w100 textarea {
     width: 100%;
     box-sizing: border-box;
@@ -48,6 +50,7 @@ textarea {
     min-height: 100px;
     resize: vertical;
 }
+
 label.checkbox input {
     display: none;
 }
@@ -60,11 +63,12 @@ label.checkbox span {
     margin-right: 6px;
 }
 
-label.checkbox input:checked + span {
+label.checkbox input:checked+span {
     background-image: url(../svg/check.svg);
-    background-color:  #ffc857;
+    background-color: #ffc857;
     background-position: center;
 }
+
 label.checkbox span, label.radiocheck span {
     width: 16px;
     height: 16px;
@@ -80,6 +84,7 @@ label.checkbox {
     vertical-align: bottom;
     display: inline-block;
 }
+
 label.checkbox, label.radiocheck {
     line-height: 16px;
     padding: 5px 20px 5px 30px;
@@ -87,7 +92,7 @@ label.checkbox, label.radiocheck {
 
 button[type="submit"] {
     text-transform: uppercase;
-    font-family: Montserrat,sans-serif;
+    font-family: Montserrat, sans-serif;
     font-size: 14px;
     line-height: 25px;
     text-decoration: none;
@@ -98,6 +103,6 @@ button[type="submit"] {
     border-radius: 3px;
     border: none;
     cursor: pointer;
-    transition: background-color .5s ease,border .5s ease;
+    transition: background-color .5s ease, border .5s ease;
     -webkit-appearance: none;
 }
