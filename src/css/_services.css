@@ -3,10 +3,6 @@
     padding: 50px;
 }
 
-.services-container {
-  background: #ececec;
-}
-
 .anchor { position: relative;}
 
 #anchor-1 {
@@ -14,22 +10,21 @@
   top: -150px;
 }
 
-/* .accordion-services section {
+.accordion-services section {
   width: 1080px;
   margin: 0 auto;
-} */
+} 
 
 .accordion-services {
     max-width:1080px;
     margin: auto;
 }
-.accordion-services section a {
+/* .accordion-services section a {
   background: #4b3f72;
   color: #fff;
   text-decoration: none;
   padding: 10px;
   display: block;
-  /* font-size: 1.3em; */
   overflow: hidden;
   border-bottom: 3px solid #1f2041;
 }
@@ -40,7 +35,6 @@
   opacity: 0;
   background: #fff;
   border:1.5px solid #1f2041;
-  /* color: #fff; */
   overflow: hidden;
   transition: 1s;
 }
@@ -48,4 +42,80 @@
   height: 100%;
   opacity: 1;
   padding: 20px;
+}
+*/
+
+
+
+
+/* **** */
+
+div.accordion {
+  position: relative;
+  margin:2em;
+}
+
+div.accordion input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity:0;
+  visibility: 0;
+}
+
+div.accordion h2 {
+  background: #1f2041;
+  color:white;
+  padding:1em;
+  position: relative;
+  font-size: 1em;
+}
+
+div.accordion label::before{
+  content:"";
+  display: inline-block;
+  border: 15px solid transparent;
+  border-left:20px solid white;
+}
+
+div.accordion label {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+div.p {
+  max-height:0px;
+  overflow: hidden;
+  transition:max-height 0.5s;
+  background-color: white;
+  box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+div.p p {
+  padding:1.5em;
+}
+
+div.accordion input:checked ~ h2 label::before{
+  border-left:15px solid transparent;
+  border-top:20px solid white;
+  margin-top:12px;
+  margin-right:10px;
+}
+
+div.accordion input:checked ~ h2 ~ div.p {
+  max-height: 100%;
+}
+
+/* div.accordion a {
+  color:steelblue;
+} */
+
+@media all and (max-width:480px){
+  div.accordion {
+    margin: 0.5em;
+  }
 }

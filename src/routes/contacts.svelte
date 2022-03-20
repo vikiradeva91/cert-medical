@@ -83,20 +83,19 @@
 			</form>
 		</div><div class="c3 pdg">
 			<h2>Cert Medical</h2>
-			<h3>Head Office</h3>
+			<h3>Our Office:</h3>
 			<p>
-				Sofia p.k. 1618, <br />
-				168 Tsar Boris III Blvd.,<br />
+				168 Tsar Boris III Blvd., <br />
 				Andromeda Business Center,<br />
-				3rd floor, office 31
+				3-rd floor, office 31<br />
+				1618 Sofia - Bulgaria<br />
+				<br />
 			</p><br />
 			<p>	
 				<b>Petar Petrov</b><br />
-				<a href="tel:+359877122777" itemprop="telephone">0877 122 777 </a>
+				<a href="tel:+359877122777" itemprop="telephone">+359 877122777</a><br/>
 				<b>
-					<a href="mailto:petar.emilov.petrov@gmail.com"
-						>petar.emilov.petrov@gmail.com
-					</a> 
+					<a href="mailto:contact@cert-medical.eu">contact(at)cert-medical.eu</a> 
 				</b>
 			</p>
 		</div>

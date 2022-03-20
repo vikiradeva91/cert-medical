@@ -31,7 +31,7 @@
 
 <header>
 	<section>
-		<a class="logo" href="/"><img src="/img/cert_medical_logo.png" alt="" /></a>
+		<a class="logo" href="/"><img src="/img/cert_medical_logo.png" alt="" /> <i>Trusted partner of MedTech industry</i></a>
 		<div class="mgE">
 			<hr />
 			<hr />
@@ -82,17 +82,18 @@
 			<div class="c3 p1">
 				<h3>Contacts</h3>
 				<a href="https://goo.gl/maps/UcmhCLRKwB9hua2c7" target="_blank">
-					Sofia p.k. 1618,<br />
 					168 Tsar Boris III Blvd.,<br />
 					Andromeda Business Center,<br />
-					3rd floor, office 31
+					3-rd floor, office 31<br />
+					1618 Sofia - Bulgaria <br/>
+					European Union
 				</a><br />
-				<a href="mailto:petar.emilov.petrov@gmail.com">
+				<a href="mailto:contact@cert-medical.eu">
 					email:
-					<span>petar.emilov.petrov@gmail.com</span>
+					<span>contact(at)cert-medical.eu</span>
 				</a><br />
 				<a href="/">
-					<span itemprop="telephone">0877 122 777</span>
+					<span itemprop="telephone">+359 877122777</span>
 				</a>
 			</div>
 		</div>
