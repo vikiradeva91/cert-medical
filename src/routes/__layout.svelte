@@ -31,7 +31,10 @@
 
 <header>
 	<section>
-		<a class="logo" href="/"><img src="/img/cert_medical_logo.png" alt="" /> <i>Trusted partner of MedTech industry</i></a>
+		<a class="logo" href="/"
+			><img src="/img/cert_medical_logo.png" alt="" />
+			<i>Trusted partner of medical devices industry</i></a
+		>
 		<div class="mgE">
 			<hr />
 			<hr />
@@ -85,7 +88,7 @@
 					168 Tsar Boris III Blvd.,<br />
 					Andromeda Business Center,<br />
 					3-rd floor, office 31<br />
-					1618 Sofia - Bulgaria <br/>
+					1618 Sofia - Bulgaria <br />
 					European Union
 				</a><br />
 				<a href="mailto:contact@cert-medical.eu">

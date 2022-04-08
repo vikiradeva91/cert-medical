@@ -1,11 +1,11 @@
 <script>
 	export let name,
-		label,
+		label = '',
 		placeholder = undefined,
-		value,
+		value = undefined,
 		disabled = undefined,
-		error,
-		classes;
+		error = '',
+		classes = '';
 </script>
 
 {#if label}

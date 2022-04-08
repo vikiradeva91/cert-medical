@@ -1,10 +1,10 @@
 <script>
 	export let name,
-		label,
-		placeholder,
+		label = '',
+		placeholder = undefined,
 		options = {},
-		value,
-		error;
+		value = undefined,
+		error = '';
 </script>
 
 {#if label}

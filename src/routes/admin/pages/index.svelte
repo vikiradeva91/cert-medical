@@ -62,7 +62,7 @@
 					<td>{item.path}</td>
 					<td>{moment(item.createdAt).format('YYYY-MM-DD HH:mm:ss')}</td>
 					<td>
-						<a href="/admin/pages/{item._id}/edit">Edit</a>
+						<a href="/admin/pages/{item.slug}/edit">Edit</a>
 						<button on:click={() => handleDelete(item._id)}>Delete</button>
 					</td>
 				</tr>

@@ -2,21 +2,24 @@
 	import { preloadClient, getAuthClient } from '$lib/api';
 
 	export async function load({ params, session }) {
-		const { id } = params;
+		const { slug } = params;
 
-		let item = {};
+		let items = [];
 
 		try {
-			const response = await preloadClient(session.token).get(`page/${id}`);
-			item = response.data;
+			const response = await preloadClient(session.token).post('query/page', {
+				$match: { slug }
+			});
 
-			console.log('item', item);
+			items = response.data.items;
+
+			console.log('items', items);
 		} catch (error) {
 			console.log(error);
 		}
 
 		return {
-			props: { page: item }
+			props: { page: items[0] }
 		};
 	}
 </script>
@@ -176,53 +179,61 @@
 						<button on:click={() => (created = undefined)}>Close</button>
 					{/if}
 				</div>
-				<div class="blocks">
-					{JSON.stringify(page)}
-					<!-- {#each Object.entries(page.blocks) as [key, value], i} -->
-					<!-- <div>
-							<a href={`/admin/pages/${page._id}/blocks/${block._id}/edit`}
-								>{block.name}</a
-							>
-						</div> -->
-					<!-- <div>
-							<textarea name="test" id="test" cols="30" rows="10">
-								{JSON.stringify(value)}
-							</textarea>
-						</div> -->
-					<!-- <div class="tab">
-							<input id={block.key} type="checkbox" />
-							<label for={block.key}>{block.name}</label>
-							<div class="tab-content">
-								<TextField label="Name" name="name" bind:value={block.name} />
-								<TextField label="Key" name="key" bind:value={block.key} />
-								<TextField
-									label="Type"
-									name="inputType"
-									bind:value={block.inputType}
-									disabled
-								/>
-
-								<svelte:component
-									this={components[block.inputType]}
-									label={block.name}
-									bind:value={block.value}
-									name={block.key}
-								/>
-
-								<div>
-									<button on:click={() => handleBlockUpdate(i)}>Save block</button
+				{#if page.data}
+					<div class="blocks">
+						<ul>
+							{#each Object.entries(page.data) as [key, { title }], i}
+								<li>
+									<a href="/admin/pages/{page.slug}/blocks/{key}/edit"
+										>{title.value}</a
 									>
-								</div>
-
-								<div>
-									<button on:click={() => handleBlockDelete(i)}>Delete</button>
-								</div>
+								</li>
+								<!-- <div>
+								<a href={`/admin/pages/${page._id}/blocks/${block._id}/edit`}
+									>{block.name}</a
+								>
 							</div>
-						</div> -->
-					<!-- {:else}
-						<h5>No blocks</h5>
-					{/each} -->
-				</div>
+							<div>
+								<textarea name="test" id="test" cols="30" rows="10">
+									{JSON.stringify(value)}
+								</textarea>
+							</div>
+							<div class="tab">
+								<input id={block.key} type="checkbox" />
+								<label for={block.key}>{block.name}</label>
+								<div class="tab-content">
+									<TextField label="Name" name="name" bind:value={block.name} />
+									<TextField label="Key" name="key" bind:value={block.key} />
+									<TextField
+										label="Type"
+										name="inputType"
+										bind:value={block.inputType}
+										disabled
+									/>
+	
+									<svelte:component
+										this={components[block.inputType]}
+										label={block.name}
+										bind:value={block.value}
+										name={block.key}
+									/>
+	
+									<div>
+										<button on:click={() => handleBlockUpdate(i)}>Save block</button
+										>
+									</div>
+	
+									<div>
+										<button on:click={() => handleBlockDelete(i)}>Delete</button>
+									</div>
+								</div>
+							</div> -->
+							{:else}
+								<h5>No blocks</h5>
+							{/each}
+						</ul>
+					</div>
+				{/if}
 			</div>
 		</div>
 	</div>
