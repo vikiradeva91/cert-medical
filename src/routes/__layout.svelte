@@ -1,4 +1,5 @@
 <script context="module">
+	import '../app.css';
 	export async function load({ url, session }) {
 		const { user: auth } = session;
 
@@ -16,12 +17,13 @@
 </script>
 
 <script>
-	import '../app.css';
 	import { removeCookie } from '$lib/cookies';
 	import { user } from '../store';
 	export let auth;
 
 	$user = auth;
+
+	let show = false;
 
 	const handleLogout = () => {
 		removeCookie('token');
@@ -35,14 +37,14 @@
 			><img src="/img/cert_medical_logo.png" alt="" />
 			<i>Trusted partner of medical devices industry</i></a
 		>
-		<div class="mgE">
+		<div class="mgE" class:show on:click={() => (show = !show)}>
 			<hr />
 			<hr />
 			<hr />
 			<hr />
 		</div>
 		<div style="clear: both" />
-		<nav class="nav-mobile">
+		<nav class="nav-mobile" class:show>
 			<a href="/services" class="fadein hover">SERVICES</a>
 			<a href="/about" class="fadein hover">ABOUT US</a>
 			<a href="/blog" class="fadein hover">BLOG</a>

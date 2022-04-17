@@ -42,6 +42,10 @@
     .mgE.show hr:nth-child(2) { transform: rotate(45deg); }
 
     .mgE.show hr:nth-child(3) { transform: rotate(-45deg); }
+
+    nav.show {
+		display: block;
+	}
 }
 
 @media all and (min-width: 961px) {
