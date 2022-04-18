@@ -79,10 +79,9 @@
 			</div>
 			<div class="c3 p1">
 				<h3>Services</h3>
-				<a href="/">Quality Management Systems</a><br />
+				<a href="/">ISO 13485</a><br />
 				<a href="/">Technical File</a><br />
-				<a href="/">Clinical evaluation</a><br />
-				<a href="/">Conformity assessment</a>
+				<a href="/"> Notified body</a>
 			</div>
 			<div class="c3 p1">
 				<h3>Contacts</h3>

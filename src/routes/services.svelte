@@ -3,7 +3,7 @@
 </div>
 
 <div class="services-container">
-	<div style="margin:0 auto; max-width: 50%; text-align:center">
+	<div class="services-container-width">
 		<h1 style="font-size: 35px;" class="p2">
 			CERT MEDICAL LTD. is the leading competence centre for CE marking of medical devices in
 			Bulgaria.

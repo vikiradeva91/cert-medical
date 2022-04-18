@@ -3,6 +3,8 @@
     padding: 50px;
 }
 
+
+
 .anchor { position: relative;}
 
 #anchor-1 {
@@ -108,14 +110,32 @@ div.accordion input:checked ~ h2 label::before{
 
 div.accordion input:checked ~ h2 ~ div.p {
   max-height: 100%;
+  padding: 10px;
 }
 
-/* div.accordion a {
-  color:steelblue;
-} */
+
+
+.services-container-width {
+  text-align:center
+}
+
+@media all and (min-width:680px) {
+  .services-container-width {
+    margin:0 auto; 
+    max-width: 50%; 
+  }
+}
+
+
+@media all and (max-width:679px) {
+  .services-container-width {
+    padding: 10px; 
+  }
+}
 
 @media all and (max-width:480px){
   div.accordion {
     margin: 0.5em;
   }
+  
 }
