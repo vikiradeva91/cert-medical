@@ -101,8 +101,7 @@
 			{:else}
 				<p>Success</p>
 			{/if}
-		</div>
-		<div class="c3 pdg">
+		</div><div class="c3 pdg">
 			<h2>Cert Medical</h2>
 			<h3>Our Office:</h3>
 			<p>
