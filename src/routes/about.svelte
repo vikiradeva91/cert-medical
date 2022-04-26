@@ -42,9 +42,7 @@
 					<br />
 					{@html who.body.value}
 					<br />
-					<p style="font-weight: bold; font-size: 20px;">We make the future safe.</p>
-					<br />
-					<a href="contacts" class="submit">Learn more about us</a>
+					<a href="contacts" class="submit">Contacts  &nbsp;&nbsp;&nbsp;&nbsp;➤</a>
 					<br />
 				</div>
 			</div>

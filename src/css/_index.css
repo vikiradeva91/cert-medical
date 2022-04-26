@@ -71,7 +71,6 @@ section.row .CE-img {
   background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
   padding: 40px 10px;
   box-sizing: border-box;
-  margin-top: 50px;
 }
 
 .calltoaction h2 {
@@ -169,8 +168,9 @@ section.row .CE-img {
 
 @media all and (min-width: 599px) and (max-width: 959px) {
   .services.flex .service {
-    width: calc(50% - 20px);
-    margin: 10px;
+    width: calc(50% - 30px);
+    margin: 15px;
+    text-align: center;
   }
 
   .services.flex .service img {
@@ -181,8 +181,8 @@ section.row .CE-img {
 
 @media all and (min-width: 960px) and (max-width: 1024px) {
   .services.flex .service {
-    width: calc(25% - 30px);
-    margin: 15px;
+    width: calc(33.333333% - 40px);
+    margin: 20px;
   }
 
   .services.flex .service img {
@@ -192,8 +192,8 @@ section.row .CE-img {
 
 @media all and (min-width: 1025px) {
   .services.flex .service {
-    width: calc(25% - 60px);
-    margin: 30px;
+    width: calc(33.333333% - 80px);
+    margin: 40px;
   }
 
   .services.flex .service img {

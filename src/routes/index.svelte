@@ -35,11 +35,8 @@
 </div>
 
 {#if trusted}
-	<h1 class="trusted-title mrg-top">
-		<i>― {trusted.title.value} ―</i>
-	</h1>
 
-	<section class="row p2">
+	<section class="row p4">
 		<div class="CE-content">
 			{@html trusted.body.value}
 		</div>
@@ -82,17 +79,6 @@
 			<p>
 				Technical documentation preparation, review and compliance assessment, according to
 				REGULATION (EU) 2017/745
-			</p>
-		</div>
-	</div>
-
-	<div class="service animated animatedFadeInUp fadeInUp">
-		<img src="/svg/Flask.svg" alt="" />
-		<div class="services-text">
-			<h4>CLINICAL EVALUATION</h4>
-			<p>
-				Clinical evaluation process management, incl. communication and negotiation with
-				contract research organizations (CRO) and accredited testing laboratories
 			</p>
 		</div>
 	</div>

@@ -4,7 +4,7 @@
 
 <div class="services-container">
 	<div class="services-container-width">
-		<h1 style="font-size: 35px;" class="p2">
+		<h1>
 			CERT MEDICAL LTD. is the leading competence centre for CE marking of medical devices in
 			Bulgaria.
 		</h1>
@@ -14,7 +14,7 @@
 			access. Since 2005 we learn and develop constantly to be your strong competitive
 			advantage!
 		</h2>
-		<br /><br />
+		<br />
 		<p>
 			<strong
 				>CERT MEDICAL offers full expert support throughout the overall process of ensuring

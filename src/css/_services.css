@@ -122,15 +122,35 @@ div.accordion input:checked ~ h2 ~ div.p {
 @media all and (min-width:680px) {
   .services-container-width {
     margin:0 auto; 
-    max-width: 50%; 
+    max-width: 100%; 
+    padding: 0 10px;
+  }
+
+  .services-container-width h1 {
+    font-size: 35px;
+    padding: 20px;
   }
 }
 
+@media all and (min-width:940px) {
+  .services-container-width {
+    margin:0 auto; 
+    max-width: 70%; 
+  }
+}
 
 @media all and (max-width:679px) {
   .services-container-width {
     padding: 10px; 
   }
+
+  .services-container-width h1 {
+    font-size: 27px;
+    line-height: 35px;
+    padding: 10px;
+  }
+
+  .services-container-width h2 { font-size: 20px;}
 }
 
 @media all and (max-width:480px){

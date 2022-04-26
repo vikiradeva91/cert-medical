@@ -69,7 +69,7 @@
 <footer>
 	<section class="footer-info">
 		<div class="footer-pdg split">
-			<div class="c3 p1">
+			<div class="c3 p015">
 				<h3>Cert Medical</h3>
 				<a href="/services">Services</a><br />
 				<a href="/about">About us</a><br />
@@ -77,13 +77,13 @@
 				<a href="/contacts">Contacts</a><br />
 				<a href="/terms">Terms & Conditions</a>
 			</div>
-			<div class="c3 p1">
+			<div class="c3 p015">
 				<h3>Services</h3>
-				<a href="/">ISO 13485</a><br />
-				<a href="/">Technical File</a><br />
-				<a href="/"> Notified body</a>
+				<a href="/services">Quality Managment System</a><br />
+				<a href="/services">Technical Files</a><br />
+				<a href="/services">Conformity assessment</a>
 			</div>
-			<div class="c3 p1">
+			<div class="c3 p015">
 				<h3>Contacts</h3>
 				<a href="https://goo.gl/maps/UcmhCLRKwB9hua2c7" target="_blank">
 					168 Tsar Boris III Blvd.,<br />
