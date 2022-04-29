@@ -81,7 +81,7 @@
 				<h3>Services</h3>
 				<a href="/services">Quality Managment System</a><br />
 				<a href="/services">Technical Files</a><br />
-				<a href="/services">Conformity assessment</a>
+				<a href="/services">Notified body</a>
 			</div>
 			<div class="c3 p015">
 				<h3>Contacts</h3>
