@@ -27,6 +27,8 @@
 </script>
 
 <script>
+	import moment from 'moment';
+
 	export let post;
 </script>
 
@@ -35,7 +37,7 @@
 </svelte:head>
 
 <div class="blog-title">
-	<h1 class="blog-in-title">BLOG ARTICLE </h1>
+	<h1 class="blog-in-title">BLOG ARTICLE</h1>
 </div>
 
 <!-- <h1 class="content-title mrg-top">
@@ -43,7 +45,7 @@
 </h1> -->
 <div style="background-color: #f0f0f0;" class="p1">
 	<section class="blog-in">
-		<div class="grouplabel"><em> January 30, 2022</em></div>
+		<div class="grouplabel"><em> {moment(post.createdAt).format('MMMM DD, YYYY')}</em></div>
 		<div class="p2">
 			<h1>{post.title}</h1>
 			{@html post.body}

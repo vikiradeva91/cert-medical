@@ -70,14 +70,16 @@
 	const handleBlockCreate = async () => {
 		try {
 			const response = await client.patch(`page/${page._id}`, {
-				$addToSet: { blocks: created }
+				[`data.${created.key}`]: created
 			});
 
 			page = response.data;
 
 			created = undefined;
 
-			edited = page.blocks.slice(-1)[0];
+			console.log('page.data', page.data);
+
+			// edited = page.data.slice(-1)[0];
 		} catch (error) {
 			console.log(error);
 			errors = error.response.data.errors;
