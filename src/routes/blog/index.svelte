@@ -1,29 +1,30 @@
 <script context="module">
-	import { client } from '$lib/api';
+	import createClient from '$lib/prismicClient';
+	import * as prismicH from '@prismicio/helpers';
 	import moment from 'moment';
 
-	export async function load() {
-		let posts = [];
+	export async function load({ fetch, params }) {
+		const client = createClient(fetch);
+		const posts = await client.getAllByType('post', {});
 
-		try {
-			const response = await client.post('query/post/');
+		console.log('posts', posts);
 
-			console.log(response);
-
-			posts = response.data.items;
-		} catch (error) {
-			console.log(error);
-			return {};
+		if (posts) {
+			return {
+				props: { posts }
+			};
 		}
 
 		return {
-			props: { posts }
+			status: 404
 		};
 	}
 </script>
 
 <script>
 	export let posts;
+
+	console.log(posts[0]);
 </script>
 
 <svelte:head>
@@ -36,22 +37,21 @@
 <div class="bg">
 	<section class="blog flex">
 		{#each posts as post}
-		<div class="news-item">
-			<h2>
-				<a href={`/blog/${post.slug}`} title={post.title}>{post.title}</a>
-			</h2>
-			<p class="date">
-				<i class="icon-calendar"></i>                    
-				📅 <a class="tag" href={`/blog/${post.slug}`} >{moment(post.createdAt).format('MMMM DD, YYYY')}</a>
-			</p>
-			<p>
-				{post.body
-					.replace(/<[^>]+>/g, '')
-					.split(' ')
-					.splice(0, 20)
-					.join(' ') + ' ...'}
-			</p>
-		</div>
+			<div class="news-item">
+				<h2>
+					<a href={`/blog/${post.uid}`} title={post.data.title}>{post.data.title}</a>
+				</h2>
+				<p class="date">
+					<i class="icon-calendar" />
+					📅
+					<a class="tag" href={`/blog/${post.slug}`}
+						>{moment(post.first_publication_date).format('MMMM DD, YYYY')}</a
+					>
+				</p>
+				<p>
+					{post.data.excerpt}
+				</p>
+			</div>
 		{/each}
 	</section>
 </div>

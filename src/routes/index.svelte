@@ -1,50 +1,46 @@
 <script context="module">
-	import { client } from '$lib/api';
+	import createClient from '$lib/prismicClient';
+	import * as prismicH from '@prismicio/helpers';
 
-	export async function load() {
-		let page = {};
+	export async function load({ fetch, params }) {
+		const client = createClient(fetch);
+		const document = await client.getByUID('page', 'homepage');
 
-		try {
-			const response = await client.post('query/page/', {
-				$match: { path: '/' }
-			});
-
-			page = response.data.items.length && response.data.items[0];
-		} catch (error) {
-			console.log(error);
+		if (document) {
+			return {
+				props: { document }
+			};
 		}
 
 		return {
-			props: { page }
+			status: 404
 		};
 	}
 </script>
 
 <script>
-	export let page;
+	export let document;
 
-	let { trusted } = page.data;
+	const { title } = document.data;
+	const { featured_image, featured_body } = document.data.body[0].items[0];
 </script>
 
 <svelte:head>
-	<title>{page.title || ''}</title>
+	<title>{title || ''}</title>
 </svelte:head>
 
 <div class="homeimg">
 	<h1 class="heading-primary-main">CE Marking for Medical Devices</h1>
 </div>
 
-{#if trusted}
-
-	<section class="row p4">
-		<div class="CE-content">
-			{@html trusted.body.value}
-		</div>
-		<div class="CE-img">
-			<img src="/img/{trusted.feature.value}" alt={trusted.title.value} />
-		</div>
-	</section>
-{/if}
+<section class="row p4">
+	<div class="CE-content">
+		{@html prismicH.asHTML(featured_body)}
+	</div>
+	<div class="CE-img">
+		<img src={featured_image.url} alt={featured_image.alt} />
+	</div>
+</section>
 
 <div class="calltoaction">
 	<h2>Set the date for your market access</h2>
@@ -58,15 +54,14 @@
 </h1>
 
 <section class="services flex">
-	
 	<div class="service animated animatedFadeInUp fadeInUp">
 		<a href="services#anchor-1">
 			<img src="/svg/iso.svg" alt="" />
 			<div class="services-text">
 				<h4>QUALITY MANAGEMENT SYSTEMS</h4>
 				<p>
-					Development and implementation of ISO 13485 - Quality Management Systems for medical
-					devices manufacturers
+					Development and implementation of ISO 13485 - Quality Management Systems for
+					medical devices manufacturers
 				</p>
 			</div>
 		</a>
@@ -94,5 +89,4 @@
 			</p>
 		</div>
 	</div>
-
 </section>

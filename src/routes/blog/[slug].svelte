@@ -1,27 +1,20 @@
 <script context="module">
-	import { client } from '$lib/api';
-	// import moment from 'moment';
+	import createClient from '$lib/prismicClient';
+	import * as prismicH from '@prismicio/helpers';
 
-	export async function load({ params }) {
-		let post = {};
+	export async function load({ fetch, params }) {
+		const client = createClient(fetch);
 
-		try {
-			const response = await client.post('query/post/', {
-				$match: { slug: params.slug }
-			});
+		const document = await client.getByUID('post', params.slug);
 
-			if (response.data.items.length < 1) {
-				throw Error('Post not found');
-			}
-
-			post = response.data.items[0];
-		} catch (error) {
-			console.log(error);
-			return { status: 404, error };
+		if (document) {
+			return {
+				props: { document }
+			};
 		}
 
 		return {
-			props: { post }
+			status: 404
 		};
 	}
 </script>
@@ -29,11 +22,13 @@
 <script>
 	import moment from 'moment';
 
-	export let post;
+	export let document;
+
+	const { title, body, first_publication_date } = document.data;
 </script>
 
 <svelte:head>
-	<title>Blog - {post.title}</title>
+	<title>Blog - {title}</title>
 </svelte:head>
 
 <div class="blog-title">
@@ -45,10 +40,12 @@
 </h1> -->
 <div style="background-color: #f0f0f0;" class="p1">
 	<section class="blog-in">
-		<div class="grouplabel"><em> {moment(post.createdAt).format('MMMM DD, YYYY')}</em></div>
+		<div class="grouplabel">
+			<em> {moment(first_publication_date).format('MMMM DD, YYYY')}</em>
+		</div>
 		<div class="p2">
-			<h1>{post.title}</h1>
-			{@html post.body}
+			<h1>{title}</h1>
+			{@html prismicH.asHTML(body)}
 		</div>
 	</section>
 </div>
