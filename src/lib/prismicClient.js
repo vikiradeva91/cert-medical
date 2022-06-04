@@ -1,6 +1,7 @@
 import * as prismic from '@prismicio/client'
+import { prismic as prismicConfig } from '../config'
 
-const repoName = `cert-medical` // Fill in your repository name
+// const repoName = `cert-medical` // Fill in your repository name
 const accessToken = `` // If your repository is private, add an access token
 
 // This defines how you will structure URL paths in your project.
@@ -19,7 +20,7 @@ const createClient = (fetch) => {
         accessToken,
         routes,
     }
-    const client = prismic.createClient(repoName, clientOptions)
+    const client = prismic.createClient(prismicConfig.repoName, clientOptions)
     return client
 }
 

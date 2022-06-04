@@ -2,11 +2,9 @@
 	import createClient from '$lib/prismicClient';
 	import * as prismicH from '@prismicio/helpers';
 
-	export async function load({ fetch, params }) {
+	export async function load({ fetch }) {
 		const client = createClient(fetch);
 		const document = await client.getByUID('page', 'services');
-
-		console.log(document);
 
 		if (document) {
 			return {

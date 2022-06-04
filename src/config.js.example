@@ -13,4 +13,8 @@ export const dashboard = {
     url: "http://localhost:3002"
 }
 
-export default { app, api, dashboard };
+export const prismic = {
+    repoName: "cert-medical"
+}
+
+export default { app, api, dashboard, prismic };

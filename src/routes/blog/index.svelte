@@ -1,13 +1,10 @@
 <script context="module">
 	import createClient from '$lib/prismicClient';
-	import * as prismicH from '@prismicio/helpers';
 	import moment from 'moment';
 
 	export async function load({ fetch, params }) {
 		const client = createClient(fetch);
 		const posts = await client.getAllByType('post', {});
-
-		console.log('posts', posts);
 
 		if (posts) {
 			return {
