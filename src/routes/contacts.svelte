@@ -34,7 +34,7 @@
 						<div class="w100">
 							<div class="p1">
 								<TextField
-									name="Name"
+									name="name"
 									id="name"
 									classes="w100"
 									label="Name"
@@ -54,7 +54,7 @@
 							</div>
 							<div class="p1">
 								<TextField
-									name="Name"
+									name="phone"
 									id="name"
 									classes="w100"
 									label="Phone"
@@ -101,7 +101,8 @@
 			{:else}
 				<p>Success</p>
 			{/if}
-		</div><div class="c3 pdg">
+		</div>
+		<div class="c3 pdg">
 			<h2>Cert Medical</h2>
 			<h3>Our Office:</h3>
 			<p>
@@ -110,12 +111,13 @@
 				3-rd floor, office 31<br />
 				1618 Sofia - Bulgaria<br />
 				<br />
-			</p><br />
-			<p>	
+			</p>
+			<br />
+			<p>
 				<b>Petar Petrov</b><br />
-				<a href="tel:+359877122777" itemprop="telephone">+359 877122777</a><br/>
+				<a href="tel:+359877122777" itemprop="telephone">+359 877122777</a><br />
 				<b>
-					<a href="mailto:contact@cert-medical.eu">contact(at)cert-medical.eu</a> 
+					<a href="mailto:contact@cert-medical.eu">contact(at)cert-medical.eu</a>
 				</b>
 			</p>
 		</div>
