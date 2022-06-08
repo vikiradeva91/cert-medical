@@ -15,7 +15,7 @@
 			success = true;
 		} catch (err) {
 			errors = err.response.data.errors;
-			console.log(error);
+			console.log(err);
 		}
 	};
 </script>

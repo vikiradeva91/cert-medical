@@ -3,7 +3,7 @@ import { getStores } from "$app/stores";
 import axios from "axios";
 
 export const client = axios.create({
-    baseURL: '/'
+    baseURL: '/api'
 })
 
 // This should be called on component initialization, otherwise the session is won't be available
@@ -13,7 +13,7 @@ export const getAuthClient = () => {
     const { token } = get(session);
 
     return axios.create({
-        baseURL: '/',
+        baseURL: '/api',
         headers: {
             authorization: `Bearer ${token}`
         }
@@ -22,7 +22,7 @@ export const getAuthClient = () => {
 
 export const preloadClient = (token) => {
     return axios.create({
-        baseURL: '/',
+        baseURL: '/api',
         headers: {
             authorization: `Bearer ${token}`
         }
